@@ -19,7 +19,7 @@
     "tarveaika": "2020-09-07 to 2021-07-31",
     "lisätiedot": "GitHub, Inc. is a United States-based global company that provides hosting for software development and version control using Git. It is a subsidiary of Microsoft, which acquired the company in 2018 for US$7.5 billion.",
     "req_date": "2020-3-18 09:22",
-    "accepted": true
+    "accepted": false
   },
   {
     "name": "Matlab",
@@ -30,7 +30,7 @@
     "tarveaika": "2020-08-01 to 2021-07-31",
     "lisätiedot": "MATLAB is a multi-paradigm numerical computing environment and proprietary programming language developed by MathWorks. MATLAB allows matrix manipulations, plotting of functions and data, implementation of algorithms, creation of user interfaces, and interfacing with programs written in other languages.",
     "req_date": "2020-3-18 10:45",
-    "accepted": true
+    "accepted": false
   },
   {
     "name": "Visual Studio",
@@ -64,125 +64,5 @@
     "lisätiedot": "Tarvitaan koko ajan",
     "req_date": "2020-7-30 17:58",
     "accepted": true
-  },
-  {
-    "name": "Apache Netbeans IDE",
-    "versio": "1.2.3",
-    "yksikkö": "TAU Yhteiskuntatieteet (SOC)",
-    "tilaaja_email": "jarno.m89@gmail.com",
-    "luokat": "HSM201;HRH216;HRI208",
-    "tarveaika": "2020.08.01 to 2021.07.31",
-    "lisätiedot": "",
-    "req_date": "2020-8-3 13:49"
-  },
-  {
-    "name": "Maple 2018",
-    "versio": "1.2.3",
-    "yksikkö": "TAU Tekniikka ja luonnontieteet (ENS)",
-    "tilaaja_email": "jarno.m89@gmail.com",
-    "luokat": "HSM208;HSM213;HSB101",
-    "tarveaika": "2020.08.01 to 2021.07.31",
-    "lisätiedot": "",
-    "req_date": "2020-8-3 13:55"
-  },
-  {
-    "name": "Apache Netbeans IDE",
-    "versio": "1.2.3",
-    "yksikkö": "TAU Tekniikka ja luonnontieteet (ENS)",
-    "tilaaja_email": "jarno.m89@gmail.com",
-    "luokat": "HSM213",
-    "tarveaika": "2020.08.01 to 2021.07.31",
-    "lisätiedot": "",
-    "req_date": "2020-8-3 14:9"
-  },
-  {
-    "name": "Arduino IDE",
-    "versio": "1.2.3",
-    "yksikkö": "TAU Lääketiede ja terveysteknologia (MET)",
-    "tilaaja_email": "jarno.m89@gmail.com",
-    "luokat": "HSB101;HRM205",
-    "tarveaika": "2020.08.01 to 2021.07.31",
-    "lisätiedot": "",
-    "req_date": "2020-8-3 14:22"
-  },
-  {
-    "name": "Matlab R2019a",
-    "versio": "1.2.3",
-    "yksikkö": "TAU Informaatioteknologia ja viestintä (ITC)",
-    "tilaaja_email": "jarno.m89@gmail.com",
-    "luokat": "HRI208",
-    "tarveaika": "2020.08.01 to 2021.07.31",
-    "lisätiedot": "",
-    "req_date": "2020-8-3 14:26"
-  },
-  {
-    "name": "OptiOffice",
-    "versio": "1.2.3",
-    "yksikkö": "TAU Tekniikka ja luonnontieteet (ENS)",
-    "tilaaja_email": "jarno.m89@gmail.com",
-    "luokat": "Norssi",
-    "tarveaika": "2020.08.01 to 2021.07.31",
-    "lisätiedot": "",
-    "req_date": "2020-8-3 14:27"
-  },
-  {
-    "name": "Apache Netbeans IDE",
-    "versio": "1.2.3",
-    "yksikkö": "TAU Tekniikka ja luonnontieteet (ENS)",
-    "tilaaja_email": "jarno.m89@gmail.com",
-    "luokat": "HSM201",
-    "tarveaika": "2020.08.01 to 2021.07.31",
-    "lisätiedot": "",
-    "req_date": "2020-8-3 15:4"
-  },
-  {
-    "name": "GitHub",
-    "versio": "1.2.3",
-    "yksikkö": "TAU Tekniikka ja luonnontieteet (ENS)",
-    "tilaaja_email": "jarno.m89@gmail.com",
-    "luokat": "HSM208",
-    "tarveaika": "2020.08.01 to 2021.07.31",
-    "lisätiedot": "",
-    "req_date": "2020-8-3 15:10"
-  },
-  {
-    "name": "Microsoft Visio",
-    "versio": "1.2.3",
-    "yksikkö": "TAU Informaatioteknologia ja viestintä (ITC)",
-    "tilaaja_email": "jarno.m89@gmail.com",
-    "luokat": "HSM221",
-    "tarveaika": "2020.08.01 to 2021.07.31",
-    "lisätiedot": "",
-    "req_date": "2020-8-3 15:12"
-  },
-  {
-    "name": "Microsoft Visio",
-    "versio": "1.2.3",
-    "yksikkö": "TAU Tekniikka ja luonnontieteet (ENS)",
-    "tilaaja_email": "jarno.m89@gmail.com",
-    "luokat": "Keskusta",
-    "tarveaika": "2020.08.01 to 2021.07.31",
-    "lisätiedot": "",
-    "req_date": "2020-8-3 15:17"
-  },
-  {
-    "name": "Microsoft Visio",
-    "versio": "1.2.3",
-    "yksikkö": "TAU Tekniikka ja luonnontieteet (ENS)",
-    "tilaaja_email": "jarno.m89@gmail.com",
-    "luokat": "Keskusta",
-    "tarveaika": "2020.08.01 to 2021.07.31",
-    "lisätiedot": "",
-    "req_date": "2020-8-3 15:23"
-  },
-  {
-    "name": "Apache Netbeans IDE",
-    "versio": "1.2.3",
-    "yksikkö": "TAU Informaatioteknologia ja viestintä (ITC)",
-    "tilaaja_email": "jarno.m89@gmail.com",
-    "luokat": "HSM221",
-    "tarveaika": "2020.08.01 to 2021.07.31",
-    "lisätiedot": "",
-    "req_date": "2020-8-3 15:29"
   }
 ]
