@@ -15,28 +15,34 @@ function showTab(n) {
     // This function will display the specified tab of the form...
     var x = document.getElementsByClassName("tab");
     console.log("n = " + n + ", x = " + x.length);
-    if (n === x.length) {
+    if (n === x.length - 1) {
         document.getElementById("prevBtn").style.display = "none";
         document.getElementById("nextBtn").style.display = "none";
-    } else {
-        x[n].style.display = "grid";
-        //... and fix the Previous/Next buttons:
-        if (n === 0) {
-            document.getElementById("prevBtn").style.display = "none";
-        } else {
-            document.getElementById("prevBtn").style.display = "inline";
-        }
-        if (n === (x.length - 1)) {
-            document.getElementById("nextBtn").innerHTML = "Submit";
-        } else {
-            document.getElementById("nextBtn").innerHTML = "Next";
-        }
-        if (n === 1) {
-            document.getElementById("prevBtn").style.display = "inline";
-        } else {
-            document.getElementById("prevBtn").style.display = "none";
-        }
     }
+    // Näytetään n:s "lomakevälilehti", tyyli riippuu välilehden sisällön asettelusta 
+    if (n === 0) {
+        x[n].style.display = "grid";
+    } else if (n === 1 || n === 2) {
+        x[n].style.display = "block";
+    }
+
+    //... and fix the Previous/Next buttons:
+    if (n === 0) {
+        document.getElementById("prevBtn").style.display = "none";
+    } else {
+        document.getElementById("prevBtn").style.display = "inline";
+    }
+    if (n === (x.length - 1)) {
+        document.getElementById("nextBtn").innerHTML = "Submit";
+    } else {
+        document.getElementById("nextBtn").innerHTML = "Next";
+    }
+    if (n === 1) {
+        document.getElementById("prevBtn").style.display = "inline";
+    } else {
+        document.getElementById("prevBtn").style.display = "none";
+    }
+
 
     //... and run a function that will display the correct step indicator:
     fixStepIndicator(n);
@@ -46,31 +52,22 @@ function nextPrev(n) {
     console.log("Next button pressed! n = " + n);
     // This function will figure out which tab to display
     var x = document.getElementsByClassName("tab");
-    var summary_header = document.getElementById("form-info-text");
     // Exit the function if any field in the current tab is invalid:
-    if (n === 1 && !validateForm()) { //  <= removed validity check =>  
+    if (n === 1 && !validateForm()) { 
         return false;
     }
     // Setting form data visible in next summary tab parapgraphs
-    if (currentTab === 0) {
-        summary_header.style.display = "block";
-        dataOverview();
-    }
-
-    if (currentTab === 1 && n === 1) {
-        summary_header.innerHTML = "Request submitted";
-        summary_header.style.margin = "100px";
-    } else if (currentTab === 1 && n === -1) {
-        summary_header.style.display = "none";
-        showTab(0);
-    }
+    if (currentTab === 0) { 
+        // Tällöin vain next button mahdollinen eli 'n' oltava '1', siirrytään overview -näkymään.
+        dataOverview(); // Rakennetaan taulukko lomakkeen datasta
+    } 
     // Hide the current tab:
     x[currentTab].style.display = "none";
     // Increase or decrease the current tab by 1:
     currentTab = currentTab + n;
 
     // if you have reached the end of the form...
-    if (currentTab === x.length) {
+    if (currentTab === x.length - 1) {
         // ... the form gets submitted:
         saveFormData();
         showTab(currentTab);
@@ -128,7 +125,7 @@ function fixStepIndicator(n) {
         x[i].className = x[i].className.replace(" active", "");
     }
 
-    if (currentTab === tab_number) {
+    if (currentTab === tab_number - 1) {
         for (i = 0; i < x.length; i++) {
             x[i].className += " ready";
         }

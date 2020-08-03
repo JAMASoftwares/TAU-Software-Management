@@ -1,5 +1,7 @@
 Tehtävälista
 
+NOTE: Tämän todo -listan päivitys ja käyttö on päättynyt 3.8.2020
+
 Osoitteet tietokantoihin / JSON muotoisiin data tiedostoihin. Tai tarvittaessa suoritettava tyyppimuunnos.
 - Sovelluslistat kaikista Tampereen Yliopiston ohjelmistoista (muutamalta viime lukukaudelta)
   Mistä osoitteesta tälläinen lista löytyy?

@@ -106,11 +106,11 @@
         </div>
 
         <div id="section_1">
-          <h3 class="section-name">SOFTWARE ORDER</h3>
+          <h3 class="section-name sp">SOFTWARE ORDER</h3>
           <hr class="form-section-line sp">
         </div>
 
-        <div id="input_elements" class="tab">
+        <div id="input_elements" class="tab sp">
           <label for="software_name">Software name (The official software name given by the software vendor)</label>
           <input type="text" name="general-input" id="software_name" placeholder="Software name"
                  list="software_names" oninput="this.className = ''" required>
@@ -163,37 +163,42 @@
           <datalist id="software_names"></datalist>
         </div>
         <!-- SECOND TAB OF FORM - Summary of software request -->
-        <h3 id="form-info-text">The following information is exported to the database</h3>
-        <div class="tab" id="output_elements">
-          <label>Software name</label>
-          <div class="sw-details"><p id="d-name" class="sw-details"></p></div>
-          <label>Software version</label>
-          <div class="sw-details"><p id="d-version" class="sw-details"></p></div>
-          <label>Responsible Unit</label>
-          <div class="sw-details"><p id="d-resp" class="sw-details"></p></div>
-          <label>Email</label>
-          <div class="sw-details"><p id="d-email" class="sw-details"></p></div>
-          <label>Classes</label>
-          <div class="sw-details"><p id="d-class" class="sw-details"></p></div>
-          <label>Needed at</label>
-          <div class="sw-details"><p id="d-start" class="sw-details"></p></div>
-          <label>Needed until</label>
-          <div class="sw-details"><p id="d-end" class="sw-details"></p></div>
-          <label>Additions</label>
-          <div class="sw-details"><p id="d-info" class="sw-details"></p></div>
+        <div class="tab sp" id="overview">
+          <h3 id="form-info-text">The following information will be exported into the database</h3>
+          <div id="output_elements">
+            <label>Software name</label>
+            <div class="sw-details"><p id="d-name" class="sw-details"></p></div>
+            <label>Software version</label>
+            <div class="sw-details"><p id="d-version" class="sw-details"></p></div>
+            <label>Responsible Unit</label>
+            <div class="sw-details"><p id="d-resp" class="sw-details"></p></div>
+            <label>Email</label>
+            <div class="sw-details"><p id="d-email" class="sw-details"></p></div>
+            <label>Classes</label>
+            <div class="sw-details"><p id="d-class" class="sw-details"></p></div>
+            <label>Needed at</label>
+            <div class="sw-details"><p id="d-start" class="sw-details"></p></div>
+            <label>Needed until</label>
+            <div class="sw-details"><p id="d-end" class="sw-details"></p></div>
+            <label>Additions</label>
+            <div class="sw-details"><p id="d-info" class="sw-details"></p></div>
+          </div>
         </div>
-        <!--
-        <div class="tab" id="finished">Tilaus jätetty
+        <!-- THIRD TAB OF FORM - Request finished -->
+        <div class="tab" id="finished">
+          <h3>Request Submitted!</h3>
           <p>Kaikki valmista!! Kiitos tiedoista.</p>
+          <p>Thank you for your request!</p>
+          <p>Place new request <a href="sworder.html">here</a></p>
         </div>
-        
-        -->
+        <!-- NEXT, PREV and SUBMIT buttons -->
         <div style="overflow:auto;">
           <div style="float:right;">
             <button class="form-button" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
             <button class="form-button" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
           </div>
         </div>
+        
       </form>
     </div>
 

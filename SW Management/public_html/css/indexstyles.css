@@ -99,10 +99,6 @@ h3 {
     /*background-color: #333;*/
 }
 
-#sw-form {
-
-}
-
 input[name="software"] {
     box-sizing: border-box;
     height: 40px;
@@ -163,11 +159,14 @@ form {
 /* TABLE elements */
 
 .tablecont {
+    padding: 6px;
+    
     grid-row: 3;
     grid-column: 2 / span 2;
     min-height: 500px;
     margin-bottom: 40px;
-    overflow: scroll;
+    overflow: auto;
+    
 }
 
 #sw_stats {
@@ -179,10 +178,10 @@ form {
     box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
 }
 
+/* Table header row styles */
 #sw_stats th {
     cursor: pointer; 
 }
-
 
 #sw_stats th:nth-child(n+1):nth-child(-n+7), th:nth-child(16) {
     margin: 10px;
@@ -200,19 +199,18 @@ form {
     background-color:#ffdddd;
 }
 
+#sw_stats td, th {
+    max-width: var(--default-tablecell-width);
+}
+
 #sw_stats td {
     box-sizing: border-box;
     border: 1px solid #ddd;
     padding: 8px;
 }
 
-#sw_stats td, th {
-    max-width: var(--default-tablecell-width);
-}
-
 #sw_stats tr:nth-child(even) { background-color: #f2f2f2; }
 #sw_stats tr:hover { background-color: lightgray; }
-
 
 #sw_stats td:nth-child(1), td:nth-child(2) {
     white-space: nowrap;
@@ -225,7 +223,6 @@ form {
 
 #sw_stats td:nth-child(3) {
     max-width: 250px;
-    overflow: hidden;
 }
 
 #sw_stats td:nth-child(3), td:nth-child(4), td:nth-child(5) {

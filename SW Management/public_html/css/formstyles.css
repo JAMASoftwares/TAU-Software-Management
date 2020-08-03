@@ -49,12 +49,20 @@
     display: grid;
     grid-template: repeat(9, auto) / 270px 1fr;
     max-width: var(--form-max-width);
+    margin-left: var(--default-margin);
+}
+
+#overview {
+    margin: var(--default-margin);
+    display: none;
 }
 
 #output_elements {
     display: grid;
     grid-template: repeat(9, auto) / 270px 1fr;
     max-width: var(--form-max-width);
+    margin: 20px;
+    box-shadow: 0px 0px 5px blueviolet;
 }
 
 .section-name {
@@ -230,17 +238,12 @@ input.invalid, select.invalid {
 }
 
 #form-info-text {
-    display: none;
     text-align: center;
 }
 
-#output_elements {
-    display: none;
-    margin: 20px;
-    box-shadow: 0px 0px 5px blueviolet;
-}
-
 #finished {
+    padding: 100px;
+    display: none;
     background-color: white;
     align-content: center;
     justify-content: center;
