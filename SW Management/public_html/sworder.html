@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ohjelmistotilaus</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="./css/indexstyles.css">
+    <link rel="stylesheet" type="text/css" href="./css/formstyles.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/accordion.css">
+    <link rel="shortcut icon" href="#" />
+
+    <script src="js/data.js"></script>
+
+  </head>
+  <body>
+
+    <!-- WMWMWMWMWMWMWMW The same content for all pages WMWMWMWMWMWMWMW -->
+    <img id="tau-logo" src="img/tau_logo.png" alt="tau-logo">
+    <div class="header">
+
+      <h1>SW Management</h1>
+    </div>
+
+    <div class="tools">
+      <h3>Toolbar</h3>
+    </div>
+
+    <div class="menu-accord">
+      <h3 style="display: none;">Site Navigation</h3>
+      <ul>
+        <li class="menu-accord-item">
+          <a onclick="showAccordionItems('Demo1')" class="btn sp w3-block">
+            <img class="menu-icons" src="img/menu-icons/icons8-customer-32.png" alt="X">Customer
+          </a>
+          <div id="Demo1" class="menu-accord-item__sub w3-hide">
+            <a href="installedsw.html">Installed softwares</a>
+            <a href="sworder.html">Order software</a>
+            <a href="index.html">Accepted requests</a>
+          </div>
+        </li>
+        <li class="menu-accord-item">
+          <a onclick="showAccordionItems('Demo2')" class="btn sp w3-block">
+            <img class="menu-icons" src="img/menu-icons/icons8-admin-settings-male-32.png" alt="X">IT-management
+          </a>
+          <div id="Demo2" class="menu-accord-item__sub w3-hide">
+            <a href="requests.html">Placed requests</a>
+            <a href="licensing.html">Licensing</a>
+            <a href="packaging.html">Packaging</a>
+          </div>
+        </li>
+        <li class="menu-accord-item">
+          <a onclick="showAccordionItems('Demo3')" class="btn sp w3-block">
+            <img class="menu-icons img-size-fix" src="img/menu-icons/icons8-study-64.png" alt="X"><span>TUNI Wiki</span>
+          </a>
+          <div id="Demo3" class="menu-accord-item__sub w3-hide">
+            <a href="https://wiki.tamk.fi/pages/viewpage.action?spaceKey=OHYT&title=Tietokoneluokkien%20ohjelmistotarpeet" target="blank">
+              Software needs for Classes</a>
+            <a href="https://intra.tuni.fi/handbook/2677/2708/7659" target="blank">TUNI vakio-ohjelmistot (intra)</a>
+          </div>
+        </li>
+        <li class="menu-accord-item">
+          <a onclick="showAccordionItems('Demo4')" class="btn sp w3-block">
+            <img class="menu-icons img-size-fix" src="img/menu-icons/icons8-transaction-list-64.png" alt="X">Software lists
+          </a>
+          <div id="Demo4" class="menu-accord-item__sub w3-hide">
+            <a href="https://www.tuni.fi/swlist/StudentLabSoftwareList-Arvo.html">Arvo</a>
+            <a href="https://www.tuni.fi/swlist/StudentLabSoftwareList-Hervanta.html">Hervanta</a>
+            <a href="https://www.tuni.fi/swlist/StudentLabSoftwareList-Keskusta.html">Keskusta</a>
+            <a href="https://www.tuni.fi/swlist/StudentLabSoftwareList-Pori.html">Pori</a>
+            <a href="https://www.tuni.fi/swlist/StudentLabSoftwareList-TAMK.html">TAMK</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- WMWMWMWMWMWMWMW The same content for all pages WMWMWMWMWMWMWMW -->
+
+    <!-- Specified content for this page -->
+    <div class="div-page_header sp">
+      <h3 id="page_header" class="sp">Request of software</h3>
+    </div>
+    <div class="orderform-elements sp">
+      <h3>Software request</h3>
+      <!-- Circles which indicates the steps of the form: -->
+      <div id="steps-div">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+      </div>
+
+      <form name="sw-order-form" id="sw-order-form">
+        <!-- FIRST TAB OF FORM - Form to get software details -->
+
+        <div id="sw-form-instructions">
+          <img src="img/sw-purchase.png" alt="img" style="width:200px; height:150px; margin-top:15px;">
+          <ul id="form_infolist" style="list-style: none;">
+            <li><p style="margin-top: 0px;"><b>Request for software</b><p></li>
+            <li>
+              <p>1. Check your Tuni computer Software Center if the software is there Installed or Available. 
+                <a href="https://intra.tuni.fi/handbook/2677/11307/11308" target="blank">Instructions</a></p></li>
+            <li><p>You can also uninstall not needed software through Software.</p></li>
+            <li><p>2. In case you cannot find the needed software in Software Center make an order on IT-services with this form.</p></li>
+            <li><p>The software will be installed and the license reserved for you or your computer. After installation you are responsible to follow the license terms and conditions.</p></li>
+          </ul>
+        </div>
+
+        <div id="section_1">
+          <h3 class="section-name">SOFTWARE ORDER</h3>
+          <hr class="form-section-line sp">
+        </div>
+
+        <div id="input_elements" class="tab">
+          <label for="software_name">Software name (The official software name given by the software vendor)</label>
+          <input type="text" name="general-input" id="software_name" placeholder="Software name"
+                 list="software_names" oninput="this.className = ''" required>
+
+          <label for="software_version">Software version</label>
+          <input type="text" name="general-input" id="software_version" placeholder="e.g. x.x.x or 2020"
+                 required oninput="this.className = ''">
+
+          <label for="resp">Responsible Unit</label>
+          <select name="general-input" id="resp" oninput="this.className = ''" required>
+            <option value="">Select unit</option>
+            <option value="TAU Tekniikka ja luonnontieteet (ENS)">TAU Tekniikka ja luonnontieteet (ENS)</option>
+            <option value="TAU Informaatioteknologia ja viestintä (ITC)">TAU Informaatioteknologia ja viestintä (ITC)</option>
+            <option value="TAU Lääketiede ja terveysteknologia (MET)">TAU Lääketiede ja terveysteknologia (MET)</option>
+            <option value="TAU Yhteiskuntatieteet (SOC)">TAU Yhteiskuntatieteet (SOC)</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <label for="email">Email</label>
+          <input type="email" name="general-input" id="email" pattern=".+@tuni.fi" 
+                 size="30" oninput="this.className = ''" placeholder="firstname.lastname@tuni.fi" required>
+
+          <label for="class_select">Classes</label>
+          <div id="class_rooms">
+            <input id="class_select" list="class_names" name="short-input" 
+                   oninput="this.className = ''" placeholder="Select or type">
+            <multi-input>  
+              <datalist id="class_names">
+                <option value="Hervanta">Hervanta</option>
+                <option value="Arvo">Arvo</option>
+                <option value="Centrum">Centrum</option>
+                <option value="Tamk">Tamk</option>
+                <option value="Vakio-ohjelmisto">Vakio-ohjelmisto</option>
+                <option value="Yleiset">Yleiset</option>
+              </datalist>
+            </multi-input>
+            <p id="values"></p>
+          </div>
+
+          <label for="start">Needed at</label>
+          <input type="date" id="start" name="short-input" oninput="this.className = ''"
+                 value="2020-08-01" min="2020-08-01" max="2021-07-31">
+          <label for="end">Needed until</label>
+          <input type="date" id="end" name="short-input" oninput="this.className = ''"
+                 value="2021-07-31" min="2020-08-01" max="2021-07-31">
+
+          <label for="add">Additions</label>
+          <textarea name="large-input" id="add" placeholder="Additional info"></textarea>
+
+          <datalist id="software_names"></datalist>
+        </div>
+        <!-- SECOND TAB OF FORM - Summary of software request -->
+        <h3 id="form-info-text">The following information is exported to the database</h3>
+        <div class="tab" id="output_elements">
+          <label>Software name</label>
+          <div class="sw-details"><p id="d-name" class="sw-details"></p></div>
+          <label>Software version</label>
+          <div class="sw-details"><p id="d-version" class="sw-details"></p></div>
+          <label>Responsible Unit</label>
+          <div class="sw-details"><p id="d-resp" class="sw-details"></p></div>
+          <label>Email</label>
+          <div class="sw-details"><p id="d-email" class="sw-details"></p></div>
+          <label>Classes</label>
+          <div class="sw-details"><p id="d-class" class="sw-details"></p></div>
+          <label>Needed at</label>
+          <div class="sw-details"><p id="d-start" class="sw-details"></p></div>
+          <label>Needed until</label>
+          <div class="sw-details"><p id="d-end" class="sw-details"></p></div>
+          <label>Additions</label>
+          <div class="sw-details"><p id="d-info" class="sw-details"></p></div>
+        </div>
+        <!--
+        <div class="tab" id="finished">Tilaus jätetty
+          <p>Kaikki valmista!! Kiitos tiedoista.</p>
+        </div>
+        
+        -->
+        <div style="overflow:auto;">
+          <div style="float:right;">
+            <button class="form-button" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+            <button class="form-button" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <footer class="sp">
+      <p id="slogan">Created by Passion -Proudly using NetBeans-</p>
+      <p id="developers">Jarno Matarmaa</p>
+    </footer>
+
+    <script src="js/orderform.js"></script>
+    <script src="js/multi-input.js"></script>
+    <script src="js/accordion.js"></script>
+
+  </body>
+</html>

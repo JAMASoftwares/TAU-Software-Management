@@ -1,0 +1,250 @@
+/* 
+    Created on : 27 Jun 2020, 11.17.36
+    Author     : Jarno Matarmaa <Tampereen Yliopisto>
+*/
+
+#page_header {
+    color: white;
+    margin-left: var(--default-margin);
+}
+
+.orderform-elements > * {
+    color: black;
+}
+
+.orderform-elements {
+    grid-row: 3;
+    grid-column: 2 / span 2;
+    display: block;
+    box-sizing: border-box;
+    height: auto;
+    max-width: var(--form-max-width);
+    margin: 20px;
+    padding: 20px;
+    border: 3px solid var(--main-site-color);
+    background-color: whitesmoke;
+}
+
+#sw-form-instructions {
+    max-width: var(--form-max-width);
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* DIV CONTAINING ACTUAL FORM ELEMENTS */
+
+#sw_order_form {
+  display: block;
+  background-color: #ffffff;
+  margin: 100px auto;
+  font-family: Raleway;
+  padding: 40px;
+  width: auto;
+  min-width: 300px;
+  max-width: var(--form-max-width);
+}
+
+#input_elements {
+    display: grid;
+    grid-template: repeat(9, auto) / 270px 1fr;
+    max-width: var(--form-max-width);
+}
+
+#output_elements {
+    display: grid;
+    grid-template: repeat(9, auto) / 270px 1fr;
+    max-width: var(--form-max-width);
+}
+
+.section-name {
+    margin-left: var(--default-margin);
+    margin-bottom: 0px !important;
+}
+
+.form-section-line {
+    margin-left: var(--default-margin);
+    margin-right: var(--default-margin);
+    width: 95%;
+}
+
+#form_infolist li {
+    white-space: normal;
+}
+
+/* Form labels and inputs */
+#input_elements > label {
+    margin: 15px;
+    font-size: 16px;
+    color: black;
+    white-space: normal;
+}
+
+label {
+    margin: 15px;
+    font-size: 16px;
+    color: black;
+    white-space: normal;
+}
+
+select, input[name="general-input"] {
+    box-sizing: border-box;
+    height: 40px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    font-style: italic;
+    background-color: white;
+}
+
+input[name="short-input"] {
+    box-sizing: border-box;
+    height: 40px;
+    width: 230px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    font-style: italic;
+    background-color: white;
+}
+
+textarea[name="large-input"] {
+    box-sizing: border-box;
+    height: 200px;
+    width: 400px;
+    max-width: 560px;
+    min-width: 400px;
+    min-height: 100px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    font-style: italic;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+input, select {
+    display: block;
+    width: 300px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-right: 12px;
+}
+
+input, button {
+    text-align: justify; 
+}
+
+.form-button {
+    box-sizing: border-box;
+    width: 150px;
+    height: 40px;
+    padding: 5px;
+    margin: 9px;
+    border-color:black;
+    border: 1px solid;
+    border-radius: 3px;
+    -o-border-radius:3px 3px 3px;
+    -webkit-border-radius:3px 3px 3px;
+    -moz-border-radius:3px 3px 3px;
+    color: var(--button-text-color);
+    background-color: var(--main-site-color);
+    text-align: center;
+}
+
+
+.nav_button:visited { color: whitesmoke; }    /* visited link */
+.nav_button:hover { box-shadow: 0px 0px 10px rgba(255, 165, 0, .9); }     /* mouse over link */
+.nav_button:active { color: black; }     /* selected link */
+button:visited { color: whitesmoke; }    /* visited link */
+button:hover { background-color: whitesmoke; cursor:pointer; color: var(--main-site-color);  }     /* mouse over link */
+button:active { color: black; }     /* pressed link */
+
+
+/* Copy pasted from W3School example */
+* {
+  box-sizing: border-box;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid, select.invalid {
+  border-color: red;
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+#steps-div {
+    text-align: center; 
+    margin-bottom: 20px;
+}
+
+
+.step {
+  text-align: center; 
+  margin-bottom: 20px;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.7;
+}
+
+.step.active {
+  opacity: 1; 
+  box-shadow: 0px 0px 3px black, 0 0 9px blue, 0 0 6px darkblue;
+  
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  box-shadow: 0px 0px 3px black, 0 0 9px blue, 0 0 6px darkblue;
+  background-color: var(--main-site-color);
+}
+
+.step.ready {
+  box-shadow: 0px 0px 3px black, 0 0 9px blue, 0 0 6px darkblue;
+  background-color: limegreen !important;
+}
+
+
+.sw-details {
+    padding:5px;
+    background-color: white;
+    border: 1px #000 solid; 
+    font-size: 18px;
+    font-family: Calibri, Helvetica, sans-serif;
+    white-space: pre-wrap;
+    
+}
+
+#form-info-text {
+    display: none;
+    text-align: center;
+}
+
+#output_elements {
+    display: none;
+    margin: 20px;
+    box-shadow: 0px 0px 5px blueviolet;
+}
+
+#finished {
+    background-color: white;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    margin: var(--default-margin);
+}
+

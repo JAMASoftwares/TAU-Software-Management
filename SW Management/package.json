@@ -1,0 +1,19 @@
+{
+    "name": "SW-Statistics",
+    "version": "1.0.0",
+    "keywords": [
+        "util",
+        "functional",
+        "server",
+        "client",
+        "browser"
+    ],
+    "author": "Jarno Matarmaa <Tampereen Yliopisto>",
+    "contributors": [
+    ],
+    "dependencies": {},
+    "scripts": {
+        "start": "node public_html\/js\/test.js"
+    }
+
+}

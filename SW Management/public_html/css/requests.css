@@ -1,0 +1,164 @@
+/* 
+    Created on : 14 Jul 2020, 11.36.51
+    Author     : Jarno Matarmaa <Tampereen Yliopisto>
+*/
+
+.save-button {
+    display: none;
+    box-sizing: border-box;
+    width: 150px;
+    height: 40px;
+    padding: 5px;
+    margin: var(--default-margin) 0px; /*calc(15px + var(--default-margin));*/
+    border: 1px solid black;
+    border-radius: 3px;
+    -o-border-radius:3px 3px 3px;
+    -webkit-border-radius:3px 3px 3px;
+    -moz-border-radius:3px 3px 3px;
+    color: var(--button-text-color);
+    background-color: lightblue;
+    text-align: center;
+}
+
+
+#sw_req {
+    width: 100%;
+    background:#fff;
+    border-radius: 5px;
+    margin:10px auto;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+}
+
+#sw_req th {
+    height: 50px;
+    cursor: pointer;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--main-site-color);
+    color: white;
+}
+
+#sw_req td, #sw_req th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#sw_req tr:nth-child(even) { background-color: #f2f2f2; }
+#sw_req tr:hover { background-color: #bce8f1; }
+
+#sw_req td:nth-child(1) {
+    max-width: 115px !important;
+}
+
+#sw_req td:nth-child(2) {
+    white-space: nowrap;
+}
+
+#sw_req td:nth-child(5), td:nth-child(6) {
+    white-space: pre;
+}
+
+/* CHECKBOX STYLES */
+
+/* Custom properties (AKA css variables) */
+.si {
+    --color-label: black;
+    --color-default: #149bdf;
+    --color-active: #32CD32;
+    --rotate-default: 180deg;
+    --rotate-active: 40deg;
+    --border-size-checkmark: 2px;
+    --border-size-box: 2px;
+    --input-size: 20px;
+    --guter: 30px;
+}
+
+/* Basic reset */
+.si, .si *, .si *::before, .si *::after {
+    box-sizing: border-box;
+}
+
+/* Label */
+.si {
+    cursor: pointer;
+    position: relative;
+    margin: 10px; 
+}
+
+.si .si-label {
+    display: inline-block;
+    padding-left: var(--guter);
+    color: var(--color-label);
+    vertical-align: text-top;
+}
+
+span {
+    font-size: 16px;
+}
+
+/* Checkbox square */
+.si.si-checkbox .si-label::before {
+    margin-top: 3px; 
+    border-radius: var(--border-size-checkmark);
+}
+
+/* Checkbox checkmark */
+.si.si-checkbox .si-label::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 18px;
+    border-width: 0 var(--border-size-checkmark) var(--border-size-checkmark) 0;
+    border-style: solid;
+    border-color: transparent var(--color-active) var(--color-active) transparent;
+    position: absolute;
+    top: -3px;
+    left: 0;
+    transform: rotate(var(--rotate-default)) scale(0);
+}
+
+/* Checkbox square */
+.si.si-checkbox > input:checked + .si-label::before {
+    transform: rotate(var(--rotate-active)) scale(0);
+}
+
+/* Checkmark */
+.si.si-checkbox > input:checked + .si-label::after {
+    left: 5px;
+    transform: rotate(var(--rotate-active)) scale(1);
+}
+
+.si > input:checked + .si-label.line-across {
+    text-decoration: line-through;
+}
+
+/* Change property values smoothly */
+.si .si-label::before,
+.si .si-label::after {
+    transition: all 0.2s ease-in-out;
+}
+
+/* An element for checkbox */
+.si .si-label::before {
+    content: '';
+    display: block;
+    width: var(--input-size);
+    height: var(--input-size);
+    border: var(--border-size-box) solid var(--color-default);
+    position: absolute;
+    top: -3px;
+    left: 0;
+    transform: rotate(0deg) scale(1);
+}
+
+/* Feedback when the user interacts with an element */
+.si .si-label:hover::before {
+    border-color: var(--color-default);
+}
+
+.si > input { display: none; }
+
+.si > input[type="checkbox"] {
+    clip-path: polygon(0 0);
+}

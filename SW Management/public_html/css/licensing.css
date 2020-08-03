@@ -1,0 +1,161 @@
+
+/* 
+    Created on : 20 Jul 2020, 22.21.42
+    Author     : Jarno Matarmaa <Tampereen Yliopisto>
+*/
+
+/* SITE HEADER elements */
+:root {
+    /* Table cell index numbers */
+    --index-name: 1;
+    --index-version: 2;
+    --index-yksikko: 3;
+    --index-email: 4;
+    --index-classes: 5;
+    --index-needed: 6;
+    --index-additions: 7;
+    --index-lh-comments: 8;
+    --index-lh-swreg: 9;
+    --index-lh-smadi: 10;
+    --index-lh-ticketnmb: 11;
+    --index-pk-install-method: 12;
+    --index-pk-packaged: 13;
+    --index-pk-installed: 14;
+    --index-pk-state: 15;
+    --index-pk-edit: 16;
+}
+
+.header {
+    grid-row: 1;
+    grid-column: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+.first-panel {
+    grid-row: 3;
+    grid-column: 2 / span 2;
+    display: block;
+    margin-right: var(--default-margin);
+}
+
+.second-panel {
+    border: 1px solid black;
+    grid-row: 4;
+    grid-column: 2 / span 2;
+    display: block;
+    margin-bottom: var(--default-margin);
+    margin-right: var(--default-margin);
+    background-color: white;
+}
+
+.panel-heading {
+    height: 60px;
+}
+
+.panel-heading2 {
+    padding:20px 0px;
+    color: white;
+    height: 20px;
+    background-color: #333;
+}
+
+.panel-body {
+    background-color: white;
+}
+
+.post_msg {
+    white-space: pre-line;
+    background-color: white;
+}
+
+.div-page_header {
+    margin-right: var(--default-margin);
+}
+
+.sw-search {
+    display: inline-block;
+    float: right;
+    color: white;
+    font-size: 14px;
+}
+
+input[name="software_search"] {
+    box-sizing: border-box;
+    height: 30px;
+    width: 200px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+    background-color: whitesmoke;
+    padding: 10px 10px 10px 10px;
+
+}
+
+#lic {
+    position: inherit;
+    display: flex;
+    flex-direction: column;
+    grid-row: 5;
+    grid-column: 1 / span 3;
+    justify-content: center;
+    height: 8vh;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--main-site-color);
+    color: var(--main-text-color);
+}
+
+/* Licensing and packaging cells 8-15 and edit cell 16 */
+.table td:nth-child(8) {
+    white-space: pre;
+    width: 100px;
+    max-width: 150px;
+}
+
+.table td:nth-child(9), td:nth-child(10), td:nth-child(11) {
+    width:auto;
+    min-width: 50px;
+    max-width: 100px !important;
+    white-space: pre;
+    
+}
+
+.table td:nth-child(16) {
+    white-space: nowrap;
+}
+
+.btn-link {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 3px;
+    
+}
+
+#btn_edit, #btn_save {
+    background-color:#149bdf;
+    color: whitesmoke;
+}
+
+#btn_cancel {
+    background-color:#ccc;
+    color: black;
+}
+
+#licensing_cols, #pack_ticketnmb {
+    background-color: bisque;
+    color: black;
+}
+
+#packaging_cols {
+    background-color: #ffdddd;
+    color: black;
+}
+
+.panel-heading {
+
+}
+

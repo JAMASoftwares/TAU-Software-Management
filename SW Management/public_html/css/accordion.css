@@ -1,0 +1,135 @@
+/* 
+    Created on : 29 Jul 2020, 19.46.03
+    Author     : Jarno Matarmaa <Tampereen Yliopisto>
+*/
+/* For accordion menu */
+:root {
+    --blue: #3498db;
+    --dark-blue: #2980b9;
+    --background: #081118;
+    --grey: #333;
+    --light-grey: #3b3b3b;
+}
+
+
+.menu-accord {
+    /* Location on the page grid */
+/*    border: 2px solid black;*/
+    grid-row: 2 / span 2;
+    grid-column: 1;
+    /* Other styles */
+    padding: 3px;
+    box-sizing: border-box;
+    width: 90%;
+    border-radius: 0.1rem;
+    overflow: hidden;
+    margin: 0px 5px;
+}
+
+.menu-accord a {
+    text-decoration: none;
+}
+
+.menu-accord ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu-accord-item {
+    list-style: none;
+    box-shadow: 0px 0px 5px rgba(0,0,0,1), 0px 0px 5px rgba(255,255,255,1);
+    margin: 1px;
+    overflow: hidden;
+}
+
+.menu-accord-item .btn {
+    cursor: pointer;
+    display: block;
+    padding: 0.7rem 1.0rem;
+    background: var(--main-site-color);
+    color: white;
+    position: relative;
+}
+
+.menu-accord-item .btn::before {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background: var(--main-site-color);
+    left: 1.5rem;
+    bottom: -0.5rem;
+    transform: rotate(45deg);
+}
+
+
+
+.menu-accord-item__sub {
+    background: var(--grey);
+    overflow: hidden;
+    transition: max-height 0.8s;
+    /*max-height: 0;*/
+}
+
+.menu-accord-item__sub a {
+    display: block;
+    padding: 1rem 1.6rem;
+    color: white;
+    font-size: 0.9rem;
+    position: relative;
+    border-bottom: 1px solid var(--light-grey);
+}
+
+.menu-accord-item__sub a:hover {
+    background-color:#777;
+}
+
+/* Selection indicator in left side of accordion menu items */
+.menu-accord-item__sub a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0.4rem;
+    height: 100%;
+    background-color: var(--blue);
+    transform: translatex(-0.4rem);
+    transition: 0.3s;
+    opacity: 0;
+}
+/* To make above declared efect visible when hovering */
+.menu-accord-item__sub a:hover::before {
+    opacity: 1;
+    transform: translatex(0);
+}
+
+
+/* Menu icon properties */
+.menu-icons {
+    height: 25px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.img-size-fix {
+    width:25px; 
+    margin-right: 10px;
+}
+
+
+/* Class selectors for hiding and showing accordion content */
+.w3-block {
+    display: block;
+}
+
+.w3-show {
+    display: block !important;
+}
+
+.w3-hide {
+    display: none! important
+}
+
+.w3-left-align {
+    text-align: left !important
+}
