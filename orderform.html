@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>-Org- Purchase of software</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="./css/indexstyles.css">
+    <link rel="stylesheet" type="text/css" href="./css/formstyles.css">
+    <link rel="shortcut icon" href="#" />
+
+  </head>
+  <body>
+
+    <img id="tau-logo" src="img/tau_logo.png" alt="tau-logo">
+    <div class="header">
+
+      <h1>SW-Statistics</h1>
+    </div>
+
+    <div class="tools">
+      <h3>Toolbar</h3>
+    </div>
+
+    <div class="menu">
+      <h3>Site navigation</h3>
+      <ul>  
+        <li><a href="index.html">Selaa ohjelmistoja</a></li>
+        <li>Asennetut ohjelmistot</li>
+        <li><a href="orderform.html">Tilaa ohjelmisto</a></li>
+        <li>Ohjelmistotilaukset</li>
+        <li>Paketoidut ohjelmistot</li>
+        <li>Odottaa paketointia</li>
+      </ul>
+      <h5 style="margin-left: 20px;">TUNI Wiki</h5>
+      <ul>
+        <li>
+          <a href="https://wiki.tamk.fi/pages/viewpage.action?spaceKey=OHYT&title=Tietokoneluokkien%20ohjelmistotarpeet" target="blank">
+            Luokkien ohjelmistotarpeet</a></li>
+      </ul>
+    </div>
+
+    <div id="div-page_header" class="sp">
+      <h3 id="page_header" class="sp">Purchase of software</h3>
+    </div>
+    <div class="orderform-elements sp">
+
+      <div id="light-grey-bar">
+        <div id="form-progress" class="progress-bar" style="width: 33%;">33%</div>
+      </div>
+
+      <h3>Software order</h3>
+      <div class="sw-form-instructions">
+        <img src="img/sw-purchase.png" alt="img" style="width:200px; height:150px; margin-top:15px;">
+
+        <ul style="list-style: none;">
+          <li><p style="margin-top: 0px;"><b>Request for software</b><p></li>
+          <li>
+            <p>1. Check your Tuni computer Software Center if the software is there Installed or Available. 
+              <a href="https://intra.tuni.fi/handbook/2677/11307/11308" target="blank">Instructions</a></p></li>
+          <li><p>You can also uninstall not needed software through Software.</p></li>
+          <li><p>2. In case you cannot find the needed software in Software Center make an order on IT-services with this form.</p></li>
+          <li><p>The software will be installed and the license reserved for you or your computer. After installation you are responsible to follow the license terms and conditions.</p></li>
+        </ul>
+      </div>
+
+      <form name="sw-order-form" id="sw-order-form">
+        <div class="section_info" id="section_1">
+          <h3 class="section-name">SOFTWARE ORDER</h3>
+          <hr class="form-section-line sp">
+        </div>
+        <label for="reason">Why you need the software? (purpose for use, why a version update is needed etc) *</label>
+        <textarea name="large-input" id="reason" placeholder="Why you need the software?"></textarea>
+        <label for="purpose">Purpose of the software</label>
+        <input type="text" name="general-input" id="purpose" placeholder="What kind of work the software is supposed to do?"
+               autocomplete="off">
+        <label for="software_name">Software name (The official software name given by the software vendor) *</label>
+        <input type="text" name="general-input" id="software_name" placeholder="Software name"
+               list="software_names" autocomplete="off">
+        <div class="section_info" id="section_2">
+          <h3 class="section-name">VERSION</h3>
+          <hr class="form-section-line sp">
+        </div>
+        <label for="software_version">Software version</label>
+        <input type="text" name="general-input" id="software_version"
+               autocomplete="off">
+        <label for="language_version">Language version</label>
+        <input type="text" name="general-input" id="language_version"
+               autocomplete="off">
+        <label for="other_version">Other version</label>
+        <input type="text" name="general-input" id="other_version"
+               autocomplete="off">
+        <div class="section_info" id="section_3">
+          <h3 class="section-name">COSTS</h3>
+          <hr class="form-section-line sp">
+        </div>
+        <label for="cost_center">Cost center (In case the software has a fee) </label>
+        <input type="text" name="general-input" id="cost_center"
+               autocomplete="off">
+        <label for="cost_target">Project/cost target </label>
+        <input type="text" name="general-input" id="cost_target"
+               autocomplete="off">
+        <label for="cost_approved">Approver of the cost </label>
+        <input type="text" name="general-input" id="cost_approved"
+               autocomplete="off">
+        <div class="section_info" id="section_4">
+          <h3 class="section-name">OTHER INFORMATION</h3>
+          <hr class="form-section-line sp">
+        </div>
+        <label for="use_purpose">Purpose for use</label>
+        <select name="purposes" id="use_purpose">
+          <option value="Select purpose">Select purpose</option>
+          <option value="Thesis work">Thesis work</option>
+          <option value="Teaching">Teaching</option>
+          <option value="Academic research">Academic research</option>
+          <option value="Commercial research">Commercial research</option>
+          <option value="Management">Management</option>
+          <option value="Other">Other</option>
+        </select>
+        <label for="user_role">Users role *</label>
+        <select name="purposes" id="user_role">
+          <option value="Select role">Select role</option>
+          <option value="Student">Thesis work</option>
+          <option value="Teacher">Teaching</option>
+          <option value="Researcher">Academic research</option>
+          <option value="Service">Commercial research</option>
+          <option value="Staff of the management services">Staff of the management services</option>
+          <option value="Other">Other</option>
+        </select>
+        <label for="target_group">To whom the program will be installed *</label>
+        <input type="text" name="general-input" id="target_group"
+               autocomplete="off">
+
+        <div class="form-submit">
+          <button class="form-button" id="submit" type="button">Submit</button>
+          <button class="form-button" id="continue" type="button" onclick="move(30)">Continue</button>
+        </div>
+
+        <datalist id="software_names"></datalist>
+        
+      </form>
+    </div>
+
+    <footer class="sp">
+      <p id="slogan">Created by Passion -Proudly using NetBeans-</p>
+      <p id="developers">Jarno Matarmaa</p>
+    </footer>
+
+    <script src="js/orderform.js"></script>
+
+  </body>
+</html>
