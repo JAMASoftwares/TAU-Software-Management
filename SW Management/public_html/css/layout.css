@@ -1,0 +1,142 @@
+/* 
+    Created on : 6 Aug 2020, 11.56.38
+    Author     : Jarno Matarmaa <Tampereen Yliopisto>
+*/
+
+body {
+    display: grid;
+    grid-template:  auto auto auto auto auto / 300px auto auto; /* 4 x 3 grid */
+    background-color:  #ddd;
+    margin: 20px;
+    /* Congruent font family style for whole site */
+    font-family: system-ui;
+}
+
+/* SITE HEADER elements */
+.header {
+    grid-row: 1;
+    grid-column: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+#page_header {
+    color: white;
+    font-weight: bolder;
+    margin-left: var(--default-margin);
+}
+
+.div-page_header {
+    height: 40px;
+}
+
+#tau-logo {
+    grid-row: 1;
+    grid-column: 1;
+    width: 15rem
+}
+
+h1 {
+    align-self: center;
+    font-size: 24px;
+}
+
+h3 {
+    display: inline-block;
+    font-weight: lighter;
+    align-self: flex-start;
+    color: var(--main-site-color);
+}
+
+#h3ind {
+    margin: var(--default-margin) 0px;
+}
+
+.div-page_header {
+    grid-row: 2;
+    grid-column: 2 / span 2;
+    height: var(--navbar-height);
+    background-color: var(--main-site-color);
+}
+
+/* MENU elements */
+.menu {
+    grid-row: 2 / span 2;
+    grid-column: 1;
+    padding-left: 0px;    
+}
+
+/* FOOTER elements */
+footer {
+    position: inherit;
+    display: flex;
+    flex-direction: column;
+    grid-row: 5;
+    grid-column: 1 / span 3;
+    justify-content: center;
+    height: 8vh;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--main-site-color);
+    color: var(--main-text-color);
+}
+#slogan {
+    margin: 5px;
+    font-size: 20px;
+    text-shadow: 0px 0px 2px black;
+    color: var(--main-text-color);
+}
+#developers {
+    margin: 5px;
+    font-size: 16px;
+    text-shadow: 0px 0px 2px #ddd;
+    color: #000;
+}
+
+/* installlist.html */
+#external-content {
+    width: 99.7%;
+    height: 1000px;
+}
+.page-content {
+    grid-row: 3;
+    grid-column: 2 / span 2;
+    min-height: 1000px;
+    margin-bottom: 20px;
+}
+
+/* licensing.html, packaging.html */
+.first-panel {
+    grid-row: 3;
+    grid-column: 2 / span 2;
+    display: block;
+    margin-right: var(--default-margin);
+}
+.second-panel {
+    border: 1px solid black;
+    grid-row: 4;
+    grid-column: 2 / span 2;
+    display: block;
+    margin-bottom: var(--default-margin);
+    margin-right: var(--default-margin);
+    background-color: white;
+}
+.panel-heading {
+    height: 60px;
+}
+.panel-heading2 {
+    padding:20px 0px;
+    color: white;
+    height: 20px;
+    background-color: #333;
+}
+.panel-body {
+    background-color: white;
+}
+.post_msg {
+    white-space: pre-line;
+    background-color: white;
+}
+/* */

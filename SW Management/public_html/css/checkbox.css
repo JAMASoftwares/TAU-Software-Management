@@ -3,62 +3,6 @@
     Author     : Jarno Matarmaa <Tampereen Yliopisto>
 */
 
-.save-button {
-    display: none;
-    box-sizing: border-box;
-    width: 150px;
-    height: 40px;
-    padding: 5px;
-    margin: var(--default-margin) 0px; /*calc(15px + var(--default-margin));*/
-    border: 1px solid black;
-    border-radius: 3px;
-    -o-border-radius:3px 3px 3px;
-    -webkit-border-radius:3px 3px 3px;
-    -moz-border-radius:3px 3px 3px;
-    color: var(--button-text-color);
-    background-color: lightblue;
-    text-align: center;
-}
-
-
-#sw_req {
-    width: 100%;
-    background:#fff;
-    border-radius: 5px;
-    margin:10px auto;
-    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
-}
-
-#sw_req th {
-    height: 50px;
-    cursor: pointer;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: var(--main-site-color);
-    color: white;
-}
-
-#sw_req td, #sw_req th {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-#sw_req tr:nth-child(even) { background-color: #f2f2f2; }
-#sw_req tr:hover { background-color: #bce8f1; }
-
-#sw_req td:nth-child(1) {
-    max-width: 115px !important;
-}
-
-#sw_req td:nth-child(2) {
-    white-space: nowrap;
-}
-
-#sw_req td:nth-child(5), td:nth-child(6) {
-    white-space: pre;
-}
-
 /* CHECKBOX STYLES */
 
 /* Custom properties (AKA css variables) */
@@ -66,6 +10,7 @@
     --color-label: black;
     --color-default: #149bdf;
     --color-active: #32CD32;
+    --color-active-rejected: red;
     --rotate-default: 180deg;
     --rotate-active: 40deg;
     --border-size-checkmark: 2px;
@@ -93,8 +38,8 @@
     vertical-align: text-top;
 }
 
-span {
-    font-size: 16px;
+span { /* Checkbox label font size */
+    font-size: var(--table-font-size);
 }
 
 /* Checkbox square */
@@ -103,8 +48,13 @@ span {
     border-radius: var(--border-size-checkmark);
 }
 
-/* Checkbox checkmark */
-.si.si-checkbox .si-label::after {
+/* Checkbox square */
+.si.si-checkbox > input:checked + .si-label::before {
+    transform: rotate(var(--rotate-active)) scale(0);
+}
+
+/* Checkbox checkmark accepted */
+.si.si-checkbox .si-label-accepted::after {
     content: '';
     display: block;
     width: 8px;
@@ -117,19 +67,33 @@ span {
     left: 0;
     transform: rotate(var(--rotate-default)) scale(0);
 }
-
-/* Checkbox square */
-.si.si-checkbox > input:checked + .si-label::before {
-    transform: rotate(var(--rotate-active)) scale(0);
-}
-
-/* Checkmark */
-.si.si-checkbox > input:checked + .si-label::after {
+/* Checkmark accepted */
+.si.si-checkbox > .accept-box:checked + .si-label::after {
     left: 5px;
     transform: rotate(var(--rotate-active)) scale(1);
 }
 
-.si > input:checked + .si-label.line-across {
+/* Checkbox checkmark rejected */
+.si.si-checkbox .si-label-rejected::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 18px;
+    border-width: 0 var(--border-size-checkmark) var(--border-size-checkmark) 0;
+    border-style: solid;
+    border-color: transparent var(--color-active-rejected) var(--color-active-rejected) transparent;
+    position: absolute;
+    top: -3px;
+    left: 0;
+    transform: rotate(var(--rotate-default)) scale(0);
+}
+/* Checkmark rejected */
+.si.si-checkbox > .reject-box:checked + .si-label::after {
+    left: 5px;
+    transform: rotate(var(--rotate-active)) scale(1);
+}
+
+.si > .accept-box:checked + .si-label.line-across {
     text-decoration: line-through;
 }
 
@@ -162,3 +126,18 @@ span {
 .si > input[type="checkbox"] {
     clip-path: polygon(0 0);
 }
+
+.table-control {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    border-radius: 5px;
+    display: inline;
+    height: 22px;
+    width: 22px;
+}
+
+.table-control:hover {
+    box-shadow: 0px 0px 6px rgba(255,255,255,1.0), 0px 0px 3px rgba(0,0,0,1.0);
+}
+

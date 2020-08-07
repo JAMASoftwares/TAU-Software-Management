@@ -5,10 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="./css/indexstyles.css">
-    <link rel="stylesheet" type="text/css" href="./css/licensing.css">
-    <link rel="stylesheet" type="text/css" href="./css/installlist.css">
+    <link rel="stylesheet" type="text/css" href="./css/layout.css">
+    <link rel="stylesheet" type="text/css" href="./css/sitetools.css">
+    <link rel="stylesheet" type="text/css" href="./css/globalproperties.css">
+    <link rel="stylesheet" type="text/css" href="./css/swtable.css">
+    <link rel="stylesheet" type="text/css" href="./css/tabletools.css">
+    <link rel="stylesheet" type="text/css" href="./css/forms.css">
     <link rel="stylesheet" type="text/css" href="./css/accordion.css">
+
     <link rel="shortcut icon" href="#packaging" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -38,7 +42,7 @@
           <div id="Demo1" class="menu-accord-item__sub w3-hide">
             <a href="installedsw.html">Installed softwares</a>
             <a href="sworder.html">Order software</a>
-            <a href="index.html">Accepted requests</a>
+            <a href="acceptedsw.html">Accepted requests</a>
           </div>
         </li>
         <li class="menu-accord-item">
@@ -82,36 +86,41 @@
       <h3 id="page_header" class="sp">Software packaging</h3>
     </div>
 
-    <div class="tablecont first-panel sp">
-      <div class="panel-heading">
-        <h3 id="h3ind" class="sp">Software list</h3>
-      </div>
-      <div class="scrollmenu">
-        <button id="customer_cols" class="menu-button">Customer data</button>
-        <button id="target_cols" class="menu-button">Target data</button>
-        <button id="additions" class="menu-button">Additions</button>
-        <button id="pack_ticketnmb" class="menu-button">Ticket nmb</button>
-        <button id="licensing_cols" class="menu-button">Licensing data</button>
-        <button id="packaging_cols" class="menu-button">Packaging data</button>
-        <div class="sw-search sp">
-          <form name="sw-form" id="sw-form">
-            <label id="searchbox-label" for="softwaresearch">Search:</label>
-            <input type="text" name="software_search" id="softwaresearch" placeholder="Type here"
-                   onkeyup="filterSoftwares()">
-          </form>
+    <div class="page-content">
+      <div class="tablecont first-panel sp">
+        <div class="panel-heading">
+          <h3 id="h3ind" class="sp">Software list</h3>
+        </div>
+        <div class="scrollmenu">
+          <div id="tabletools-buttons">
+            <button id="customer_cols" class="menu-button">Customer data</button>
+            <button id="target_cols" class="menu-button">Target data</button>
+            <button id="additions" class="menu-button">Additions</button>
+            <button id="pack_ticketnmb" class="menu-button">Ticket nmb</button>
+            <button id="licensing_cols" class="menu-button">Licensing data</button>
+            <button id="packaging_cols" class="menu-button">Packaging data</button>
+          </div>
+          <div class="sw-search sp">
+            <form name="sw-form" id="sw-form">
+              <label id="searchbox-label" for="softwaresearch">Search:</label>
+              <input type="text" name="software_search" id="softwaresearch" placeholder="Type here"
+                     onkeyup="filterSoftwares()">
+            </form>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="tbl_user_data"></div>
         </div>
       </div>
-      <div class="panel-body">
-        <div class="tbl_user_data"></div>
-      </div>
-    </div>
 
-    <div class="second-panel sp">
-      <div class="panel-heading2"><b>HTML Table Edits/Upates</b></div>
-      <div class="panel-body">
-        <p>All the changes will be displayed below</p>
-        <div class="post_msg"> </div>
+      <div class="second-panel sp">
+        <div class="panel-heading2"><b>HTML Table Edits/Upates</b></div>
+        <div class="panel-body">
+          <p>All the changes will be displayed below</p>
+          <div class="post_msg"> </div>
+        </div>
       </div>
+
     </div>
 
     <footer id="lic" class="sp">

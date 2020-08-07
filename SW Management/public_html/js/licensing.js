@@ -134,15 +134,15 @@ var random_id = function () {
     tbl += '<th onclick="sortTable(4)">Luokat</th>';
     tbl += '<th onclick="sortTable(5)">Tarveaika</th>';
     tbl += '<th onclick="sortTable(6)">Lisätiedot</th>';
-    tbl += '<th class="lisenssih" onclick="sortTable(8)">Lisenssinh. kommentit</th>';
-    tbl += '<th class="lisenssih" onclick="sortTable(9)">Efecte swreg</th>';
-    tbl += '<th class="lisenssih" onclick="sortTable(10)">Smadikortti nro.</th>';
-    tbl += '<th class="lisenssih" onclick="sortTable(11)">Paketointi tikettinro.</th>';
-    tbl += '<th class="paketointi" onclick="sortTable(12)">Asennustapa</th>';
-    tbl += '<th class="paketointi" onclick="sortTable(13)">Paketoitu</th>';
-    tbl += '<th class="paketointi" onclick="sortTable(14)">Asennettu</th>';
-    tbl += '<th class="paketointi" onclick="sortTable(15)">Tilannetieto</th>';
-    tbl += '<th onclick="sortTable(7)">Edit</th>';
+    tbl += '<th class="lisenssih" onclick="sortTable(7)">Lisenssinh. kommentit</th>';
+    tbl += '<th class="lisenssih" onclick="sortTable(8)">Efecte swreg</th>';
+    tbl += '<th class="lisenssih" onclick="sortTable(9)">Smadikortti nro.</th>';
+    tbl += '<th class="lisenssih" onclick="sortTable(10)">Paketointi tikettinro.</th>';
+    tbl += '<th class="paketointi" onclick="sortTable(11)">Asennustapa</th>';
+    tbl += '<th class="paketointi" onclick="sortTable(12)">Paketoitu</th>';
+    tbl += '<th class="paketointi" onclick="sortTable(13)">Asennettu</th>';
+    tbl += '<th class="paketointi" onclick="sortTable(14)">Tilannetieto</th>';
+    tbl += '<th>Edit</th>';
     tbl += '</tr>';
     tbl += '</thead>';
 //--->create table header > end
@@ -201,7 +201,7 @@ var random_id = function () {
         tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="tilaaja_email">' + email_string + '</div></td>';
         tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="luokat">' + class_string + '</div></td>';
         tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="tarveaika">' + val['tarveaika'] + '</div></td>';
-        tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="lisätiedot">' + val['lisätiedot'] + '</div></td>';
+        tbl += '<td class="sp"><div class="additions row_data" edit_type="click" col_name="lisätiedot">' + val['lisätiedot'] + '</div></td>';
         // Lisenssinhallinnan sarakkeet
         tbl += '<td class="sp licensing"><div class="row_data" edit_type="click" col_name="lh_kommentit">' + val['lh_kommentit'] + '</div></td>';
         tbl += '<td class="sp licensing"><div class="row_data" edit_type="click" col_name="sw_reg">' + val['sw_reg'] + '</div></td>';
@@ -490,8 +490,8 @@ function filterSoftwares() {
     }
 }
 
-// Disabling some columns by default
 function showDefaultColumnsForLicensing() {
+    // Disabling some columns by default
     toggleCol(col_luokat);
     toggleCol(col_tarve);
     toggleCol(col_lisatieto);

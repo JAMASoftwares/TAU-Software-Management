@@ -5,10 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="./css/indexstyles.css">
-    <link rel="stylesheet" type="text/css" href="./css/formstyles.css">
-    <link rel="stylesheet" type="text/css" href="./css/requests.css">
+    <link rel="stylesheet" type="text/css" href="./css/layout.css">
+    <link rel="stylesheet" type="text/css" href="./css/sitetools.css">
+    <link rel="stylesheet" type="text/css" href="./css/globalproperties.css">
+    <link rel="stylesheet" type="text/css" href="./css/swtable.css">
+    <link rel="stylesheet" type="text/css" href="./css/tabletools.css">
+    <link rel="stylesheet" type="text/css" href="./css/forms.css">
     <link rel="stylesheet" type="text/css" href="./css/accordion.css">
+    <link rel="stylesheet" type="text/css" href="./css/checkbox.css">
     <link rel="shortcut icon" href="#" />
 
     <script src="js/data.js"></script>
@@ -37,7 +41,7 @@
           <div id="Demo1" class="menu-accord-item__sub w3-hide">
             <a href="installedsw.html">Installed softwares</a>
             <a href="sworder.html">Order software</a>
-            <a href="index.html">Accepted requests</a>
+            <a href="acceptedsw.html">Accepted requests</a>
           </div>
         </li>
         <li class="menu-accord-item">
@@ -77,30 +81,49 @@
     <!-- WMWMWMWMWMWMWMW The same content for all pages WMWMWMWMWMWMWMW -->
 
     <!-- Specified content for this page -->
+
     <div class="div-page_header sp">
       <h3 id="page_header" class="sp">Software requests</h3>
     </div>
-    <div class="tablecont">
-      <h3 class="sp">Ohjelmistopyynnöt / tilaukset</h3>
-      <table class="table sp" id="sw_req">
-        <thead>
-          <tr id="theader">
-            <th onclick="sortTable(1)">Ohjelmisto</th>
-            <th onclick="sortTable(2)">Versio</th>
-            <th onclick="sortTable(3)">Vastuuyksikkö</th>
-            <th onclick="sortTable(4)">Tilaajan E-mail</th>
-            <th onclick="sortTable(5)">Luokat</th>
-            <th onclick="sortTable(6)">Pvm</th>
-            <!--
-            <th onclick="sortTable(5)">Tarveaika</th>
-            <th onclick="sortTable(6)">Lisätiedot</th>
-            -->
-          </tr>
-        </thead>
-        <tbody id="tbody">
-        </tbody>
-      </table>   
-      <button class="save-button sp" type="button" id="table_save_button" onclick="saveList()">Save</button> 
+    <div class="page-content">
+      <div class="tablecont">
+        <h3 class="sp">Ohjelmistopyynnöt / tilaukset</h3>
+        <div class="scrollmenu">
+          <div id="tabletools-buttons">
+            <button id="controls" class="menu-button green">Acc/Rej</button>
+            <button id="customer_cols" class="menu-button">Customer data</button>
+            <button id="target_cols" class="menu-button">Target data</button>
+            <button id="additions" class="menu-button">Additions</button>
+          </div>
+          <div class="sw-search sp">
+            <form name="sw-form" id="sw-form">
+              <label id="searchbox-label" for="softwaresearch">Search:</label>
+              <input type="text" name="software_search" id="softwaresearch" placeholder="Type here"
+                     onkeyup="filterSoftwares()">
+            </form>
+          </div>
+        </div>
+        <table class="table sp" id="sw_req">
+          <thead>
+            <tr id="theader">
+              <th onclick="sortTable(2)">Ohjelmisto</th>
+              <th onclick="sortTable(3)">Versio</th>
+              <th onclick="sortTable(4)">Vastuuyksikkö</th>
+              <th onclick="sortTable(5)">Tilaajan E-mail</th>
+              <th onclick="sortTable(6)">Luokat</th>
+              <th onclick="sortTable(7)">Tarve alkaa</th>
+              <th onclick="sortTable(8)">Tarve loppu</th>
+              <th onclick="sortTable(9)">Lisätiedot</th>
+              <th onclick="sortTable(10)">Pvm</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+          </tbody>
+        </table>
+        <button class="cancel-button sp" type="button" id="table_cancel_button" onclick="removeSelections()">Cancel</button>
+        <button class="save-button sp" type="button" id="table_save_button" onclick="saveList()">Save</button>
+        <button class="reject-button sp" type="button" id="table_reject_button" onclick="rejectList()">Reject</button>
+      </div>
     </div>
 
     <footer class="sp">
@@ -108,6 +131,7 @@
       <p id="developers">Jarno Matarmaa</p>
     </footer>
 
+    <script src="js/tools.js"></script>
     <script src="js/requests.js"></script>
     <script src="js/accordion.js"></script>
 

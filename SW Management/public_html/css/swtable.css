@@ -1,0 +1,250 @@
+/* 
+    Created on : 6 Aug 2020, 11.48.29
+    Author     : Jarno Matarmaa <Tampereen Yliopisto>
+*/
+:root {
+    /* Table cell index numbers */
+    --index-name: 1;
+    --index-version: 2;
+    --index-yksikko: 3;
+    --index-email: 4;
+    --index-classes: 5;
+    --index-needed: 6;
+    --index-additions: 7;
+    --index-lh-comments: 8;
+    --index-lh-swreg: 9;
+    --index-lh-smadi: 10;
+    --index-lh-ticketnmb: 11;
+    --index-pk-install-method: 12;
+    --index-pk-packaged: 13;
+    --index-pk-installed: 14;
+    --index-pk-state: 15;
+    --index-pk-edit: 16;
+}
+
+/* TABLE elements */
+.tablecont {
+    padding: 6px;
+    
+    grid-row: 3;
+    grid-column: 2 / span 2;
+    min-height: 500px;
+    margin-bottom: 40px;
+    overflow: auto; 
+}
+
+#sw_stats {
+    box-sizing: border-box;
+    font-size: 14px;
+    width: 100%;
+    max-width: 100%;
+    background: #fff;
+    border-spacing: 0px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+}
+
+/* Table header row styles */
+#sw_stats th {
+    top: 0;
+    cursor: pointer; 
+}
+
+#sw_stats th:nth-child(n+1):nth-child(-n+7), th:nth-child(16) {
+    margin: 10px;
+    padding: 8px;
+    text-align: left;
+    background-color: var(--main-site-color);
+    color: white;
+}
+/* Cells for licensing */
+#sw_stats th:nth-child(n+8):nth-child(-n+11) {
+    background-color:bisque;
+}
+/* Cells for packaging */
+#sw_stats th:nth-child(n+12):nth-child(-n+15) {
+    background-color:#ffdddd;
+}
+
+#sw_stats td, th {
+    max-width: var(--default-tablecell-width);
+}
+
+#sw_stats td {
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#sw_stats tr:nth-child(even) { background-color: #f2f2f2; }
+#sw_stats tr:hover { background-color: lightgray; }
+
+#sw_stats td:nth-child(1), td:nth-child(2) {
+    white-space: nowrap;   
+}
+
+#sw_stats td:nth-child(2) {
+    max-width: 120px;
+}
+
+#sw_stats td:nth-child(3) {
+    max-width: 260px;
+}
+
+#sw_stats td:nth-child(3), td:nth-child(4), td:nth-child(5) {
+    white-space: pre;
+    overflow: hidden;
+}
+
+#sw_stats td:nth-child(4) {
+    max-width: 170px;
+}
+
+#sw_stats td:nth-child(6) {
+    min-width: 100px;
+    white-space: pre-wrap;
+}
+
+#sw_stats td:nth-child(7) {
+    min-width: 200px;
+}
+
+/* LICENSING and PACKAGING cells */
+/* Licensing and packaging cells 8-15 and edit cell 16 */
+#sw_stats td:nth-child(8) {
+    white-space: pre;
+    width: 100px;
+    max-width: 150px;
+}
+
+#sw_stats td:nth-child(9), td:nth-child(10), td:nth-child(11) {
+    width:auto;
+    min-width: 50px;
+    max-width: 100px;
+    white-space: pre;
+    
+}
+
+#sw_stats td:nth-child(16) {
+    white-space: nowrap;
+}
+
+
+/* SW Request */
+.save-button {
+    display: none;
+    box-sizing: border-box;
+    width: 150px;
+    height: 40px;
+    padding: 5px;
+    margin: var(--default-margin) 0px; /*calc(15px + var(--default-margin));*/
+    border: 1px solid black;
+    border-radius: 3px;
+    -o-border-radius:3px 3px 3px;
+    -webkit-border-radius:3px 3px 3px;
+    -moz-border-radius:3px 3px 3px;
+    color: var(--button-text-color);
+    background-color: lightblue;
+    text-align: center;
+}
+
+.cancel-button {
+    display: none;
+    box-sizing: border-box;
+    width: 150px;
+    height: 40px;
+    padding: 5px;
+    margin: var(--default-margin) 0px; /*calc(15px + var(--default-margin));*/
+    border: 1px solid black;
+    border-radius: 3px;
+    -o-border-radius:3px 3px 3px;
+    -webkit-border-radius:3px 3px 3px;
+    -moz-border-radius:3px 3px 3px;
+    color: var(--button-text-color);
+    background-color:#ddd;
+    text-align: center;
+}
+
+.reject-button {
+    display: none;
+    box-sizing: border-box;
+    width: 150px;
+    height: 40px;
+    padding: 5px;
+    margin: var(--default-margin) 0px; /*calc(15px + var(--default-margin));*/
+    border: 1px solid black;
+    border-radius: 3px;
+    -o-border-radius:3px 3px 3px;
+    -webkit-border-radius:3px 3px 3px;
+    -moz-border-radius:3px 3px 3px;
+    color: var(--button-text-color);
+    background-color: tomato;
+    text-align: center;
+}
+
+#sw_req {
+    width: 100%;
+    background:#fff;
+    font-size: var(--table-font-size);
+    border-radius: 5px;
+    border-spacing: 0px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+}
+
+#sw_req th {
+    height: 50px;
+    cursor: pointer;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--main-site-color);
+    color: white;
+    white-space: nowrap;
+}
+
+#sw_req td, #sw_req th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#sw_req tr:nth-child(even) { background-color: #f2f2f2; }
+#sw_req tr:hover { background-color: #bce8f1; }
+
+#sw_req td:nth-child(1) {
+    max-width: 80px;
+}
+
+#sw_req td:nth-child(2) {
+    max-width: 125px;
+}
+
+#sw_req td:nth-child(3) {
+    white-space: nowrap;
+}
+
+#sw_req td:nth-child(5), td:nth-child(6), td:nth-child(7) {
+    white-space: pre-wrap;
+}
+
+#sw_req td:nth-child(8), td:nth-child(9) {
+    white-space: nowrap;
+}
+
+#sw_req td:nth-child(10) {
+    min-width: 200px;
+    max-width: 300px;
+    white-space: normal;
+}
+
+#sw_req td:nth-child(11) {
+    min-width: 130px;
+    white-space: nowrap;
+}
+
+.additions {
+    height: 100%;
+    max-height: 100px;
+    overflow: auto;
+}
+
+
+

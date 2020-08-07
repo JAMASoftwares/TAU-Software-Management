@@ -1,7 +1,52 @@
 /* 
-    Created on : 27 Jun 2020, 11.17.36
+    Created on : 6 Aug 2020, 11.51.28
     Author     : Jarno Matarmaa <Tampereen Yliopisto>
 */
+
+/* FORM elements*/
+
+.form-actions {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+    /*background-color: #333;*/
+}
+.form-button {
+    box-sizing: border-box;
+    width: 150px;
+    height: 40px;
+    padding: 5px;
+    margin: 9px;
+    border-color:black;
+    border: 1px solid;
+    border-radius: 3px;
+    -o-border-radius:3px 3px 3px;
+    -webkit-border-radius:3px 3px 3px;
+    -moz-border-radius:3px 3px 3px;
+    color: var(--button-text-color);
+    background-color: #666666;
+}
+
+#searchbox_label {
+    color: black;
+    display: inline-block;
+    font-family: var(--site-font);
+    font-size: 20px;
+}
+
+form button { /* All the form elements gets the same font style */
+    display: inline-block;
+    font-family: var(--site-font);
+    font-size: 20px;
+    color: var(--button-text-color);
+}
+
+form {
+    white-space: nowrap;
+    display: inline-block;
+}
+
 
 #page_header {
     color: white;
@@ -95,6 +140,23 @@ label {
     white-space: normal;
 }
 
+/* INPUTS */
+input[name="software"] {
+    box-sizing: border-box;
+    height: 40px;
+    width: 300px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: whitesmoke;
+    background-image: url('../img/search-icon.png');
+    background-size: 25px 25px;
+    background-position: 5px;
+    background-repeat: no-repeat;
+    padding: 10px 10px 10px 40px;
+}
+
 select, input[name="general-input"] {
     box-sizing: border-box;
     height: 40px;
@@ -131,8 +193,20 @@ textarea[name="large-input"] {
     margin-bottom: 20px;
 }
 
+input[name="software_search"] {
+    box-sizing: border-box;
+    height: 30px;
+    width: 200px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+    background-color: whitesmoke;
+    padding: 10px 10px 10px 10px;
+
+}
+
 input, select {
-    display: block;
     width: 300px;
     margin-top: 12px;
     margin-bottom: 12px;
@@ -250,4 +324,3 @@ input.invalid, select.invalid {
     text-align: center;
     margin: var(--default-margin);
 }
-

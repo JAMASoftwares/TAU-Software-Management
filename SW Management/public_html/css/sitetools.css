@@ -1,0 +1,12 @@
+/* 
+    Created on : 6 Aug 2020, 11.55.02
+    Author     : Jarno Matarmaa <Tampereen Yliopisto>
+*/
+
+/* TOOLS elements */
+.tools {
+    grid-row: 1;
+    grid-column: 3;
+    justify-content: center;
+    align-content: center;
+}

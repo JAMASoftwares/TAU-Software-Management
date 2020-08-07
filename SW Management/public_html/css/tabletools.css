@@ -1,0 +1,101 @@
+/* 
+    Created on : 6 Aug 2020, 11.47.36
+    Author     : Jarno Matarmaa <Tampereen Yliopisto>
+*/
+
+div.scrollmenu {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollmenu a, .menu-button {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+}
+
+div.scrollmenu a:hover, .menu-button:hover {
+    background-color: #777;
+}
+
+#tabletools-buttons {
+    margin: 3px;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.menu-button {
+    min-width: 100px;
+    height: 40px;
+    border-radius: 0px;
+    background-color: transparent;
+}
+
+.menu-button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+    color: white;
+    border-color: #32CD32;
+}
+
+.sw-search {
+    display: inline-block;
+    float: right;
+    color: white;
+    font-size: 14px;
+}
+
+#searchbox-label {
+    color: white;
+    display: inline;
+}
+
+#licensing_cols, #pack_ticketnmb {
+    background-color: bisque;
+    color: black;
+}
+
+#packaging_cols {
+    background-color: #ffdddd;
+    color: black;
+}
+
+button.green {
+    background-color: green;
+    color: whitesmoke;
+}
+
+button.tomato {
+    background-color: tomato;
+    color: whitesmoke;
+}
+
+#controls:disabled {
+    background-color:#ccc;
+}
+
+img:active {
+    transform: scale(1.1);
+}
+
+.btn-link {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 3px;
+
+}
+
+/* EDIT and SAVE table row modifies */
+#btn_edit, #btn_save {
+    background-color:#149bdf;
+    color: whitesmoke;
+}
+
+#btn_cancel {
+    background-color:#ccc;
+    color: black;
+}

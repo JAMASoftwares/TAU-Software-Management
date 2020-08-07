@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="./css/indexstyles.css">
+    <link rel="stylesheet" type="text/css" href="./css/layout.css">
+    <link rel="stylesheet" type="text/css" href="./css/sitetools.css">
+    <link rel="stylesheet" type="text/css" href="./css/globalproperties.css">
+    <link rel="stylesheet" type="text/css" href="./css/swtable.css">
+    <link rel="stylesheet" type="text/css" href="./css/forms.css">
     <link rel="stylesheet" type="text/css" href="./css/accordion.css">
     <link rel="shortcut icon" href="#" />
 
@@ -35,7 +39,7 @@
           <div id="Demo1" class="menu-accord-item__sub w3-hide">
             <a href="installedsw.html">Installed softwares</a>
             <a href="sworder.html">Order software</a>
-            <a href="index.html">Accepted requests</a>
+            <a href="acceptedsw.html">Accepted requests</a>
           </div>
         </li>
         <li class="menu-accord-item">
@@ -78,35 +82,36 @@
     <div class="div-page_header sp">
       <h3 id="page_header" class="sp">Accepted requests</h3>
     </div>
+    <div class="page-content">
+      <div class="tablecont">
+        <div class="form-actions sp">
+          <h3 class="sp">Tietokoneluokkien Ohjelmistot</h3>
+          <p style="color: red;">Sisältää vain esimerkkidataa!</p>
+          <form name="sw-form" id="sw-form">
+            <label id="searchbox-label" for="softwaresearch">Search software:</label>
+            <input type="text" name="software" id="softwaresearch" placeholder="Type here"
+                   onkeyup="filterSoftwares()">
+          </form>
+        </div>
 
-    <div class="tablecont">
-      <div class="form-actions sp">
-        <h3 class="sp">Tietokoneluokkien Ohjelmistot</h3>
-        <p style="color: red;">Sisältää vain esimerkkidataa!</p>
-        <form name="sw-form" id="sw-form">
-          <label id="searchbox-label" for="softwaresearch">Search software:</label>
-          <input type="text" name="software" id="softwaresearch" placeholder="Type here"
-                 onkeyup="filterSoftwares()">
-        </form>
+        <table class="table sp" id="sw_stats">
+          <thead>
+            <tr>
+              <th onclick="sortTable(0)">Ohjelmisto</th>
+              <th onclick="sortTable(1)">Versio</th>
+              <th onclick="sortTable(2)">Vastuuyksikkö</th>
+              <th onclick="sortTable(3)">Tilaajan E-mail</th>
+              <th onclick="sortTable(4)">Luokat</th>
+              <th onclick="sortTable(5)">Tarveaika</th>
+              <th onclick="sortTable(6)">Lisätiedot</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+          </tbody>
+        </table>
       </div>
-
-      <table class="table sp" id="sw_stats">
-        <thead>
-          <tr>
-            <th onclick="sortTable(0)">Ohjelmisto</th>
-            <th onclick="sortTable(1)">Versio</th>
-            <th onclick="sortTable(2)">Vastuuyksikkö</th>
-            <th onclick="sortTable(3)">Tilaajan E-mail</th>
-            <th onclick="sortTable(4)">Luokat</th>
-            <th onclick="sortTable(5)">Tarveaika</th>
-            <th onclick="sortTable(6)">Lisätiedot</th>
-          </tr>
-        </thead>
-        <tbody id="tbody">
-        </tbody>
-      </table>
     </div>
-
+    
     <footer class="sp">
       <p id="slogan">Created by Passion -Proudly using NetBeans-</p>
       <p id="developers">Jarno Matarmaa</p>

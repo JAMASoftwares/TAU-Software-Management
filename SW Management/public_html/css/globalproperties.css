@@ -1,0 +1,19 @@
+/* 
+    Created on : 6 Aug 2020, 11.58.28
+    Author     : Jarno Matarmaa <Tampereen Yliopisto>
+*/
+
+/* SITE properties */
+.sp {
+    /* Site colors */
+    --nav-bar-color: #666666;
+    --main-site-color: #551A8B;
+    --main-text-color: whitesmoke;
+    --button-text-color: white;
+    /* Common element sizes */
+    --navbar-height: 60px;
+    --default-margin: 20px;
+    --form-max-width: 1000px;
+    --default-tablecell-width: 300px;
+    --table-font-size: 14px;
+}
