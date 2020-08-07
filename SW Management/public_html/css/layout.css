@@ -139,4 +139,53 @@ footer {
     white-space: pre-line;
     background-color: white;
 }
-/* */
+
+/* Process schema styles */
+#process {
+    display: grid;
+    grid-template: auto auto / auto auto;
+    background-color: white;
+}
+
+#chart_div {
+    margin-top: 30px;
+    zoom: 1.2;
+    -moz-transform: scale(1.2);
+}
+
+.schema {
+    grid-row: 1;
+    grid-column: 1;
+    margin-left: 50px;
+    width: 40vw;
+    min-width: 600px;
+}
+
+.text-content {
+    grid-row: 2;
+    grid-column: 1;
+    margin: 50px 50px;
+    width: 40vw;
+    min-width: 600px;
+}
+
+#kampusareena {
+    grid-row: 1 / span 2;
+    grid-column: 2;
+}
+
+#kampus {
+    max-width: 100%;
+    height:auto;
+    object-fit: cover;
+    min-height: 100vh;
+    max-height: 800px;
+    animation-name: opacity;
+    animation-duration: 3s;
+}
+
+@keyframes opacity {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+

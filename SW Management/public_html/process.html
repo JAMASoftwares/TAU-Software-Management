@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Lisensointi</title>
+    <title>Prosessi</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,18 +9,44 @@
     <link rel="stylesheet" type="text/css" href="./css/sitetools.css">
     <link rel="stylesheet" type="text/css" href="./css/globalproperties.css">
     <link rel="stylesheet" type="text/css" href="./css/swtable.css">
-    <link rel="stylesheet" type="text/css" href="./css/tabletools.css">
     <link rel="stylesheet" type="text/css" href="./css/forms.css">
     <link rel="stylesheet" type="text/css" href="./css/accordion.css">
+    <link rel="shortcut icon" href="#" />
 
-    <link rel="shortcut icon" href="#licensing" />
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="js/data.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {packages: ["orgchart"]});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Name');
+          data.addColumn('string', 'Manager');
+          data.addColumn('string', 'ToolTip');
+
+          // For each orgchart box, provide the name, manager, and tooltip to show.
+          data.addRows([
+              [{'v': 'Asiakas', 'f': 'Asiakas<div style="color:blue; font-style:italic">Opetushenkilöstö</div>'},
+                  '', ''],
+              [{'v': 'Tilavaraukset', 'f': 'Tilavaraukset<div style="color:green; font-style:italic">Tilavarauspalvelu</div>'}, 'Asiakas', 'VP'],
+              [{'v': 'Työasemahallinta', 'f': 'Työasemahallinta<div style="color:red; font-style:italic">Ohjelmistohankinnat</div>'},
+                  'Asiakas', 'VP'],
+              ['Lisenssihallinta', 'Työasemahallinta', ''],
+              ['Ohjelmiston paketointi', 'Lisenssihallinta', 'Bob Sponge'],
+              ['Ohjelmiston jakelu tietokoneluokkiin', 'Ohjelmiston paketointi', '']
+          ]);
+
+          // Create the chart.
+          var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+          chart.nodeClass += " stls";
+          // Draw the chart, setting the allowHtml option to true for the tooltips.
+          chart.draw(data, {'allowHtml': true});
+      }
+    </script>
 
   </head>
-  <!-- Class tag "lic" is needed for identifying if page is licensing.html and then showing right table columns -->
-  <body class="lic">
+  <body>
 
     <!-- WMWMWMWMWMWMWMW The same content for all pages WMWMWMWMWMWMWMW -->
     <img id="tau-logo" src="img/tau_logo.png" alt="tau-logo">
@@ -37,7 +63,7 @@
       <h3 style="display: none;">Site Navigation</h3>
       <ul>
         <li class="menu-accord-item">
-          <a onclick="showAccordionItems('Demo1')" class="btn sp w3-block">
+          <a class="btn sp w3-block">
             <img class="menu-icons" src="img/menu-icons/icons8-customer-32.png" alt="X">Customer
           </a>
           <div id="Demo1" class="menu-accord-item__sub w3-hide">
@@ -47,7 +73,7 @@
           </div>
         </li>
         <li class="menu-accord-item">
-          <a onclick="showAccordionItems('Demo2')" class="btn sp w3-block">
+          <a class="btn sp w3-block">
             <img class="menu-icons" src="img/menu-icons/icons8-admin-settings-male-32.png" alt="X">IT-management
           </a>
           <div id="Demo2" class="menu-accord-item__sub w3-hide">
@@ -57,7 +83,7 @@
           </div>
         </li>
         <li class="menu-accord-item">
-          <a onclick="showAccordionItems('Demo3')" class="btn sp w3-block">
+          <a class="btn sp w3-block">
             <img class="menu-icons img-size-fix" src="img/menu-icons/icons8-study-64.png" alt="X"><span>TUNI Wiki</span>
           </a>
           <div id="Demo3" class="menu-accord-item__sub w3-hide">
@@ -68,7 +94,7 @@
           </div>
         </li>
         <li class="menu-accord-item">
-          <a onclick="showAccordionItems('Demo4')" class="btn sp w3-block">
+          <a class="btn sp w3-block">
             <img class="menu-icons img-size-fix" src="img/menu-icons/icons8-transaction-list-64.png" alt="X">Software lists
           </a>
           <div id="Demo4" class="menu-accord-item__sub w3-hide">
@@ -85,39 +111,41 @@
 
     <!-- Specified content for this page -->
     <div class="div-page_header sp">
-      <h3 id="page_header" class="sp">Software licensing</h3>
+      <h3 id="page_header" class="sp">Process schema</h3>
     </div>
     <div class="page-content">
-      <div class="tablecont first-panel sp">
-        <div class="panel-heading">
-          <h3 id="h3ind" class="sp">Software list</h3>
+      <div id='process'>
+        
+        <div class='schema'>
+          <h3 style='display: block;'><b>Ohjelmistotilauksen käsittelykaavio</b></h3>
+          <div id="chart_div"></div>
         </div>
-        <div class="scrollmenu">
-          <div id="tabletools-buttons">
-            <button id="customer_cols" class="menu-button">Customer data</button>
-            <button id="target_cols" class="menu-button">Target data</button>
-            <button id="additions" class="menu-button">Additions</button>
-            <button id="licensing_cols" class="menu-button">Licensing data</button>
-            <button id="packaging_cols" class="menu-button">Packaging data</button>
-          </div>
-          <div class="sw-search sp">
-            <form name="sw-form" id="sw-form">
-              <label id="searchbox-label" for="softwaresearch">Search:</label>
-              <input type="text" name="software_search" id="softwaresearch" placeholder="Type here"
-                     onkeyup="filterSoftwares()">
-            </form>
-          </div>
+        <div class='text-content'>
+          <p><b>Tämä kaavio mallintaa prosessin etenemisen vaiheita</b></p>
+          <p>
+            Asiakas tekee ennen ohjelmistotilausta erikseen eräänlaisen tilavarauspyynnön. 
+            Luokkatiloja ei pääse valitsemaan suoraan, vaan luokkatilat jaetaan opetuskäyttöön
+            vastaanotettujen tilavarauspyyntöjen perusteella. Tilavarauspalvelut asettavat 
+            omat kriteerinsä sille, millä perusteilla tilat jaetaan opettajille.
+          </p>
+          Tämänkaltaisessa toiminnassa on vakavia ongelmia ja turhaa mutkikkuutta. Ohjelmistoja
+          joudutaan jonkin verran siirtelemään luokista toiseen, mikä on käytännössä turhaa
+          työtä ja sujuu harvoin ongelmitta. 
+          <p>
+            Tilavarauksesta toimitetaan asiakkaalle tieto tämän käyttöön varatusta opetustilasta.
+            Sen jälkeen asiakkaan tulee tehdä vielä ohjelmistotilaus tietohallinnolle, mikäli
+            luokkien vakio-ohjelmisto ei ole riittävä.
+          </p>
+          <p>
+            Kehityskeskusteluissa tulisi nostaa esille, onko tämänkaltainen toimintamalli
+            perusteltu. Voisiko tilavarauspalvelut ja tietohallinnon työasemahallinta tehdä
+            yhteistyötä tässä paremmin tai voisiko tietojärjestelmää kehittää siten, että
+            asiakas voisi valita tietokoneluokan itse sen perusteella, missä on jo lähtökohtaisesti
+            soveltuva ohjelmisto.
+          </p>
         </div>
-        <div class="panel-body">
-          <div class="tbl_user_data"></div>
-        </div>
-      </div>
-
-      <div class="second-panel sp">
-        <div class="panel-heading2"><b>HTML Table Edits/Upates</b></div>
-        <div class="panel-body">
-          <p>All the changes will be displayed below</p>
-          <div class="post_msg"> </div>
+        <div id='kampusareena'>
+          <img src='img/silta.jpg' alt='Voi räkä' id='kampus'>
         </div>
       </div>
     </div>
@@ -127,7 +155,6 @@
       <p id="developers">Jarno Matarmaa</p>
     </footer>
 
-    <script src="js/licensing.js"></script>
     <script src="js/accordion.js"></script>
 
   </body>
