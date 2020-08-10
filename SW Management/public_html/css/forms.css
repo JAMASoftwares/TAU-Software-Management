@@ -149,7 +149,7 @@ input[name="software"] {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    background-color: whitesmoke;
+    background-color: white;
     background-image: url('../img/search-icon.png');
     background-size: 25px 25px;
     background-position: 5px;
@@ -201,7 +201,7 @@ input[name="software_search"] {
     border: 1px solid #ccc;
     border-radius: 3px;
     font-size: 14px;
-    background-color: whitesmoke;
+    background-color: white;
     padding: 10px 10px 10px 10px;
 
 }

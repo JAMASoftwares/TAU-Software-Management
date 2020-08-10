@@ -14,36 +14,7 @@
     <link rel="shortcut icon" href="#" />
 
     <script src="js/data.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {packages: ["orgchart"]});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-          var data = new google.visualization.DataTable();
-          data.addColumn('string', 'Name');
-          data.addColumn('string', 'Manager');
-          data.addColumn('string', 'ToolTip');
-
-          // For each orgchart box, provide the name, manager, and tooltip to show.
-          data.addRows([
-              [{'v': 'Asiakas', 'f': 'Asiakas<div style="color:blue; font-style:italic">Opetushenkilöstö</div>'},
-                  '', ''],
-              [{'v': 'Tilavaraukset', 'f': 'Tilavaraukset<div style="color:green; font-style:italic">Tilavarauspalvelu</div>'}, 'Asiakas', 'VP'],
-              [{'v': 'Työasemahallinta', 'f': 'Työasemahallinta<div style="color:red; font-style:italic">Ohjelmistohankinnat</div>'},
-                  'Asiakas', 'VP'],
-              ['Lisenssihallinta', 'Työasemahallinta', ''],
-              ['Ohjelmiston paketointi', 'Lisenssihallinta', 'Bob Sponge'],
-              ['Ohjelmiston jakelu tietokoneluokkiin', 'Ohjelmiston paketointi', '']
-          ]);
-
-          // Create the chart.
-          var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
-          chart.nodeClass += " stls";
-          // Draw the chart, setting the allowHtml option to true for the tooltips.
-          chart.draw(data, {'allowHtml': true});
-      }
-    </script>
+    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
 
   </head>
   <body>
@@ -56,30 +27,31 @@
     </div>
 
     <div class="tools">
-      <h3>Toolbar</h3>
+      <h3>Työkalut</h3>
     </div>
 
     <div class="menu-accord">
-      <h3 style="display: none;">Site Navigation</h3>
+      <h3 style="display: none;">Navigointi</h3>
       <ul>
         <li class="menu-accord-item">
           <a class="btn sp w3-block">
-            <img class="menu-icons" src="img/menu-icons/icons8-customer-32.png" alt="X">Customer
+            <img class="menu-icons" src="img/menu-icons/icons8-customer-32.png" alt="X">Asiakas
           </a>
           <div id="Demo1" class="menu-accord-item__sub w3-hide">
-            <a href="installedsw.html">Installed softwares</a>
-            <a href="sworder.html">Order software</a>
-            <a href="acceptedsw.html">Accepted requests</a>
+            <a href="installedsw.html">Asennetut ohjelmistot</a>
+            <a href="https://resourcebooker-tut.scientia.com/#/app/booking-types" target="blank">Resource Booker (ext)</a>
+            <a href="sworder.html">Tilaa ohjelmisto</a>
+            <a href="acceptedsw.html">Hyväksytyt tilaukset</a>
           </div>
         </li>
         <li class="menu-accord-item">
           <a class="btn sp w3-block">
-            <img class="menu-icons" src="img/menu-icons/icons8-admin-settings-male-32.png" alt="X">IT-management
+            <img class="menu-icons" src="img/menu-icons/icons8-admin-settings-male-32.png" alt="X">Ohjelmistohallinta
           </a>
           <div id="Demo2" class="menu-accord-item__sub w3-hide">
-            <a href="requests.html">Placed requests</a>
-            <a href="licensing.html">Licensing</a>
-            <a href="packaging.html">Packaging</a>
+            <a href="requests.html">Ohjelmistotilaukset</a>
+            <a href="licensing.html">Lisensointi</a>
+            <a href="packaging.html">Paketointi</a>
           </div>
         </li>
         <li class="menu-accord-item">
@@ -88,14 +60,14 @@
           </a>
           <div id="Demo3" class="menu-accord-item__sub w3-hide">
             <a href="https://wiki.tamk.fi/pages/viewpage.action?spaceKey=OHYT&title=Tietokoneluokkien%20ohjelmistotarpeet" target="blank">
-              Software needs for Classes</a>
+              Luokkien ohjelmistotarpeet (ext)</a>
             <a href="https://intra.tuni.fi/handbook/2677/2708/7659" target="blank">TUNI vakio-ohjelmistot (intra)</a>
-            <a href="process.html">Process schema</a>
+            <a href="process.html">Prosessikaaviot</a>
           </div>
         </li>
         <li class="menu-accord-item">
           <a class="btn sp w3-block">
-            <img class="menu-icons img-size-fix" src="img/menu-icons/icons8-transaction-list-64.png" alt="X">Software lists
+            <img class="menu-icons img-size-fix" src="img/menu-icons/icons8-transaction-list-64.png" alt="X">Ohjelmistolistat (ext)
           </a>
           <div id="Demo4" class="menu-accord-item__sub w3-hide">
             <a href="https://www.tuni.fi/swlist/StudentLabSoftwareList-Arvo.html">Arvo</a>
@@ -111,41 +83,41 @@
 
     <!-- Specified content for this page -->
     <div class="div-page_header sp">
-      <h3 id="page_header" class="sp">Process schema</h3>
+      <h3 id="page_header" class="sp">Prosessikaavio</h3>
     </div>
     <div class="page-content">
       <div id='process'>
-        
+
         <div class='schema'>
           <h3 style='display: block;'><b>Ohjelmistotilauksen käsittelykaavio</b></h3>
-          <div id="chart_div"></div>
+          <div id="chart_div">
+            <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2020-08-10T15:09:44.432Z\&quot; agent=\&quot;5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36\&quot; etag=\&quot;UDX669SJJ0Gq1iWy4sPE\&quot; version=\&quot;13.6.2\&quot; type=\&quot;google\&quot;&gt;&lt;diagram id=\&quot;r44Elcj799XAZVTu8grt\&quot; name=\&quot;Page-1\&quot;&gt;7Vptj6M2EP41SO2HW4EJJPmYZLet1Kt2pT21vX5zggPeOJgak5f++o7BhNcEckdy1+sl0gaPX2fmecZjs4a92B5+FjgKfuMeYQYyvYNhPxoIWbY5hR8lOWYSdzLJBL6gnm5UCF7pP0QLTS1NqEfiSkPJOZM0qgpXPAzJSlZkWAi+rzZbc1adNcI+aQheV5g1pX9QTwaZdILGhfwXQv0gn9lytcJbnDfWmsQB9vi+JLKfDHshOJfZ0/awIEwZL7dL1u+nM7WnhQkSyj4dor/enFlAt3z36zb6fb2hke+/06PsMEu0wgZyGYw3X3MYFrm+es5lcYRDpYk8avO4fyc8b/wuTp03gwaWGx2KyvooSS74QBneYYETMA1jNJQ4bwJaJPVuIMvmr4qXoi7JVt5jlaPqKgFDjItKDwPZ6/RzXhtaaEMk3/CQsIRvNpSEqV1Bu01MZEkJ2qJYm7GbijUaooqaSPAk9IhytwXV+4BK8hrhlardAztBFsgt09VrytjipLC9dtRX+VgKviGlGjf9QI0vsAdqyVLdMv2e1rIjQpLDWXxaJ9RDuCB8S6Q4QpO8g6uJoiMFmjhZeV/wDpm6TVDinKNlWFPdPw1dsAEeNCGuIMe4hRw1kxMPooUuciED7vMQs6dCOi+cYkKpaPOe80i74o1IedShDyeSVx2VzakmumxYWBdPxIpcUEivX2LhE3mhndvuKEEYlnRXXcfgVkdXhaRGmOjN/tYY9eFoLGxj7uKYbHFLVOpN1Ma6esfO0aXY2QgeWt2rQtdz8EbYlsaSBzjc0DDEagjlNWS+4Q0EsA6Nz0SxfuH5245iI9upRDFrYjajmHXPKGZfxafPo88spngDGlxLmIHJ8RwRCUkFAXCzjM+xzH6/egS72DSBsy0ItsemuVhom5Qxn7F8EPTaVhW9LeC1xvcE7/Rb24Ldnlvw5EtuwW5HyPhUor6nMQnjmHZurDUXw/kgUo+R4CsSx92kWuLVxk/d/pxImIpoeZWZ9c1juh6ruhbqufbU9gbaIFz0UCUZmrawzHGaLBvdimVW2zHwP02zSU+aWWa7s+7Ds8mNePYCSZzkwDD6nWHptpZfynQxLE/ehmeYeSNXF7l82J29/6+cPhr1DKu3c/p1R9neSbDTenI9XaZFmO2qKOiX1p47W3YvCLUt6Ic9WUKjXfLjJ5wmb5x0DwA4a9x90LtvrmyNeuzioTdTt+JQWjEMqdgqJSYWsiku2YscqPxTbewPji59LNU8HvSenxaOeSEEpUqdVPFjua7olpbyfh6Gk5tnDJ4S5Gzszgna/V7yq3PBrb0zBz3Di9qnS3GsdgKz7RpcMj11r/J1f30gt5ZlTmoDZXZoDJRC76T2Z6DRuR0aC2TZZWRZD+aoA1xp6YUICuoRUYJtNty4DG/zIryz3Sx/J4S+EFbtrwqr1lBYde+M1bYDbx+slkDZxMMZWPWOmuiqsDkg+uye4EPfwTcE+JqvmYqkHuYGC6nEHv6kLxbBZnC2a8ATEhlZBSRm1A8VWsH/KtTNVbpDV5jNdMWWel52cCeQy+FlOpSCUqRUTZV35obzqMaCs3qW77Vm+APeQI5Q9S2g1ZbFt6VV6Pq0CorF6/fMncU/MdhP/wI=&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+          </div>
         </div>
         <div class='text-content'>
-          <p><b>Tämä kaavio mallintaa prosessin etenemisen vaiheita</b></p>
+          <h3>Prosessin vaiheiden karkea mallinnus</h3>
           <p>
             Asiakas tekee ennen ohjelmistotilausta erikseen eräänlaisen tilavarauspyynnön. 
             Luokkatiloja ei pääse valitsemaan suoraan, vaan luokkatilat jaetaan opetuskäyttöön
-            vastaanotettujen tilavarauspyyntöjen perusteella. Tilavarauspalvelut asettavat 
-            omat kriteerinsä sille, millä perusteilla tilat jaetaan opettajille.
-          </p>
-          Tämänkaltaisessa toiminnassa on vakavia ongelmia ja turhaa mutkikkuutta. Ohjelmistoja
-          joudutaan jonkin verran siirtelemään luokista toiseen, mikä on käytännössä turhaa
-          työtä ja sujuu harvoin ongelmitta. 
+            vastaanotettujen tilavarauspyyntöjen perusteella. Tilavarauspalveluissa asetetaan 
+            omat kriteerit sille, millä perusteilla tilat jaetaan opettajille.
           <p>
             Tilavarauksesta toimitetaan asiakkaalle tieto tämän käyttöön varatusta opetustilasta.
             Sen jälkeen asiakkaan tulee tehdä vielä ohjelmistotilaus tietohallinnolle, mikäli
             luokkien vakio-ohjelmisto ei ole riittävä.
           </p>
-          <p>
-            Kehityskeskusteluissa tulisi nostaa esille, onko tämänkaltainen toimintamalli
-            perusteltu. Voisiko tilavarauspalvelut ja tietohallinnon työasemahallinta tehdä
-            yhteistyötä tässä paremmin tai voisiko tietojärjestelmää kehittää siten, että
-            asiakas voisi valita tietokoneluokan itse sen perusteella, missä on jo lähtökohtaisesti
-            soveltuva ohjelmisto.
-          </p>
         </div>
-        <div id='kampusareena'>
-          <img src='img/silta.jpg' alt='Voi räkä' id='kampus'>
+        <div class='img-container'>
+          <img src='img/silta.jpg' alt='Voi räkä' id='silta'>
+        </div>
+        <div class="schema2">
+          <h3>Nykyinen ja suunniteltu ohjelmistotilausten käsittelyä kuvaava prosessi</h3>
+          <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2020-08-10T14:42:28.019Z\&quot; agent=\&quot;5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36\&quot; etag=\&quot;gw8byP_yPsWBDaG30e5F\&quot; version=\&quot;13.6.2\&quot; type=\&quot;google\&quot;&gt;&lt;diagram id=\&quot;-SCrEpDLvMyu197BvTeq\&quot; name=\&quot;Page-1\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+          <p>(Keskeneräinen)</p>
+          <ul>
+            <li><p>Vahvat katkoviivat kuvaavat suunniteltua muutosta prosessissa</p></li>
+            <li><p>Ohut katkoviiva kuvaa oletettua olemassaolevaa tai suunniteltua prosessia, josta ei ole varmuutta</p></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -155,6 +127,7 @@
       <p id="developers">Jarno Matarmaa</p>
     </footer>
 
+    <script type="text/javascript" src="https://app.diagrams.net/js/viewer-static.min.js"></script>
     <script src="js/accordion.js"></script>
 
   </body>
