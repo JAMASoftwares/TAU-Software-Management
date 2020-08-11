@@ -13,4 +13,4 @@ Run it via terminal/command prompt like this (mac/linux):
 - nodemon ws-server.js 
 
 Or
-- node ws.server.js
+- node ws-server.js
