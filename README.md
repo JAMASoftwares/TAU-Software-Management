@@ -16,4 +16,6 @@ Or
 - node ws-server.js
 
 
-![Accepted software view] (accepted_sw.png?raw=true "Optional Title")
+<div align="center">
+    <img src="/accepted_sw.png" width="400px"</img> 
+</div>
