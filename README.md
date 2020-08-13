@@ -16,4 +16,4 @@ Or
 - node ws-server.js
 
 
-![Alt text]accepted_sw.png
+!Acepted software view] (/../<master>/accepted_sw.png?raw=true "Optional Title")
