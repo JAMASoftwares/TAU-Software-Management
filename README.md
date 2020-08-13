@@ -18,9 +18,9 @@ Or
 # Project Screenshots
 
 <div align="center">
-    <img src="/accepted_sw.png" style="width='100%'; margin:30px;">
-    <img src="/sw_order.png" width="100%">
-    <img src="/ordered_sw.png" width="100%">
+    <img src="/accepted_sw.png" style="width: 100%; margin: 30px;">
+    <img src="/sw_order.png" style="width: 100%; margin: 30px;">
+    <img src="/ordered_sw.png" style="width: 100%; margin: 30px;">
 </div>
 
 # Process schemas
