@@ -14,3 +14,6 @@ Run it via terminal/command prompt like this (mac/linux):
 
 Or
 - node ws-server.js
+
+
+![Alt text]accepted_sw.png
