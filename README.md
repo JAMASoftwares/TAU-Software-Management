@@ -15,7 +15,19 @@ Run it via terminal/command prompt like this (mac/linux):
 Or
 - node ws-server.js
 
+# Project Screenshots
 
 <div align="center">
-    <img src="/accepted_sw.png" width="100%"</img> 
+    <br>
+    <img src="/accepted_sw.png" width="100%"</img>
+    <br>
+    <img src="/sw_order.png" width="100%"</img>
+    <br>
+    <img src="/ordered_sw.png" width="100%"</img>
+    <br>
+</div>
+# Process schemas
+<div align="center">
+    <br>
+    <img src="/Prosessikaavio.jpg" width="70%"</img>
 </div>
