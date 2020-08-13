@@ -17,5 +17,5 @@ Or
 
 
 <div align="center">
-    <img src="/accepted_sw.png" width="400px"</img> 
+    <img src="/accepted_sw.png" width="100%"</img> 
 </div>
