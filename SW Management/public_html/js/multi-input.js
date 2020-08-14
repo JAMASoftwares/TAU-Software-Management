@@ -33,8 +33,7 @@ class MultiInput extends HTMLElement {
         this._shadowRoot.innerHTML =
                 `<style>
                 :host {
-                  border: var(--multi-input-border, 1px solid #ddd);
-                  display: inline-block;
+                  display: block;
                   white-space: initial;
                   padding: 0px;
                 }
@@ -55,6 +54,7 @@ class MultiInput extends HTMLElement {
                 /* NB pointer-events: none above */
                 ::slotted(div.item:hover) {
                   background-color: #eee;
+                  border-color: red;
                   color: black;
                 }
                 ::slotted(input) {
@@ -65,7 +65,8 @@ class MultiInput extends HTMLElement {
                 }
             </style>
             <slot></slot>`;
-
+        
+        this.style.maxWidth = "400px";
         this._datalist = document.getElementById("class_names");
         this._validInput = /^[a-zA-Z0-9_\-\ ]{4,12}$/;
         this._allowedValues = [];
@@ -85,6 +86,7 @@ class MultiInput extends HTMLElement {
 
     // Called by _handleKeydown() when the value of the input is an allowed value.
     _addItem(value) {
+        this.style.border = "var(--multi-input-border, 1px solid blueviolet)";
         this._input.value = '';
         const item = document.createElement('div');
         item.classList.add('item');
@@ -122,6 +124,11 @@ class MultiInput extends HTMLElement {
             this._datalist.insertBefore(option, this._datalist.firstChild);
             this._allowedValues.push(value);
         }
+        
+        const items = this.querySelectorAll('.item');
+        if (items.length < 1) {
+            this.style.border = "";
+        } 
     }
 
     // Avoid stray text remaining in the input element that's not in a div.item.

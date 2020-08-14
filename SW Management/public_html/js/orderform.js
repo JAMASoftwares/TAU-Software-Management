@@ -197,17 +197,42 @@ function createSWObjFromFormData() {
     var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     var time = today.getHours() + ":" + today.getMinutes();
     var dateTime = date + ' ' + time;
+    var swname = document.getElementById("software_name").value;
+    
+    
+    // Generates random 3 capital letter string
+    var req_id = "";
+    var characters = "ABCDEFGHIJKLMNOPQRSTUVXYZ";
+    for (i = 0; i < 3; i++) {
+        req_id += characters.charAt(Math.floor((Math.random() * characters.length) + 1));
+    }
+    req_id += swname.substring(0, (swname.length > 2) ? 3 : swname.length);
+    req_id += dateTime.replace(/[-,:, ]/g, "");
+    
+    console.log("Requested ID created: " + req_id);
     
     var sw_obj = {
-        name: document.getElementById("software_name").value,
+        name: swname,
         versio: document.getElementById("software_version").value,
         yksikkö: document.getElementById("resp").value,
         tilaaja_email: email_string,
         luokat: class_string,
-        tarveaika: document.getElementById("start").value.replace(/-/g, '.') + " to " +
-                document.getElementById("end").value.replace(/-/g, '.'),
+        tarve_alku: document.getElementById("start").value.replace(/-/g, '.'),
+        tarve_loppu: document.getElementById("end").value.replace(/-/g, '.'),
         lisätiedot: document.getElementById("add").value,
-        req_date: dateTime
+        req_date: dateTime,
+        lh_kommentit: "",
+        sw_reg: "",
+        smadikortti_nro: "",
+        pak_pyynto_tik_nro: "",
+        asennustapa: "",
+        tilannetieto: "",
+        rejected: false,
+        accepted: false,
+        licensed: false,
+        packaged: false,
+        installed: false,
+        request_id: req_id
     };
     console.log(sw_obj);
 

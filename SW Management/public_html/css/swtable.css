@@ -9,17 +9,18 @@
     --index-yksikko: 3;
     --index-email: 4;
     --index-classes: 5;
-    --index-needed: 6;
-    --index-additions: 7;
-    --index-lh-comments: 8;
-    --index-lh-swreg: 9;
-    --index-lh-smadi: 10;
-    --index-lh-ticketnmb: 11;
-    --index-pk-install-method: 12;
-    --index-pk-packaged: 13;
-    --index-pk-installed: 14;
-    --index-pk-state: 15;
-    --index-pk-edit: 16;
+    --index-needed-at: 6;
+    --index-needed-to: 7;
+    --index-additions: 8;
+    --index-lh-comments: 9;
+    --index-lh-swreg: 10;
+    --index-lh-smadi: 11;
+    --index-lh-ticketnmb: 12;
+    --index-pk-install-method: 13;
+    --index-pk-packaged: 14;
+    --index-pk-installed: 15;
+    --index-pk-state: 16;
+    --index-pk-edit: 17;
 }
 
 /* TABLE elements */
@@ -49,7 +50,7 @@
     cursor: pointer; 
 }
 
-#sw_stats th:nth-child(n+1):nth-child(-n+7), th:nth-child(16) {
+#sw_stats th:nth-child(n+1):nth-child(-n+8), th:nth-child(17) {
     margin: 10px;
     padding: 8px;
     text-align: left;
@@ -57,11 +58,11 @@
     color: white;
 }
 /* Cells for licensing */
-#sw_stats th:nth-child(n+8):nth-child(-n+11) {
+#sw_stats th:nth-child(n+9):nth-child(-n+12) {
     background-color:bisque;
 }
 /* Cells for packaging */
-#sw_stats th:nth-child(n+12):nth-child(-n+15) {
+#sw_stats th:nth-child(n+13):nth-child(-n+16) {
     background-color:#ffdddd;
 }
 
@@ -99,24 +100,24 @@
     max-width: 170px;
 }
 
-#sw_stats td:nth-child(6) {
+#sw_stats td:nth-child(6), th:nth-child(7) {
     min-width: 100px;
-    white-space: pre-wrap;
+    white-space: nowrap;
 }
 
-#sw_stats td:nth-child(7) {
+#sw_stats td:nth-child(8) {
     min-width: 200px;
 }
 
 /* LICENSING and PACKAGING cells */
-/* Licensing and packaging cells 8-15 and edit cell 16 */
-#sw_stats td:nth-child(8) {
+/* Licensing and packaging cells 9-15 and edit cell 16 */
+#sw_stats td:nth-child(9) {
     white-space: pre;
     width: 100px;
     max-width: 150px;
 }
 
-#sw_stats td:nth-child(9), td:nth-child(10), td:nth-child(11) {
+#sw_stats td:nth-child(10), td:nth-child(11), td:nth-child(12) {
     width:auto;
     min-width: 50px;
     max-width: 100px;
@@ -124,7 +125,7 @@
     
 }
 
-#sw_stats td:nth-child(16) {
+#sw_stats td:nth-child(17) {
     white-space: nowrap;
 }
 
@@ -221,21 +222,25 @@
     white-space: nowrap;
 }
 
-#sw_req td:nth-child(5), td:nth-child(6), td:nth-child(7) {
-    white-space: pre-wrap;
-}
-
-#sw_req td:nth-child(8), td:nth-child(9) {
+#sw_req td:nth-child(4) {
     white-space: nowrap;
 }
 
-#sw_req td:nth-child(10) {
+#sw_req td:nth-child(6), td:nth-child(7), td:nth-child(8) {
+    white-space: pre-wrap;
+}
+
+#sw_req td:nth-child(9), td:nth-child(10) {
+    white-space: nowrap;
+}
+
+#sw_req td:nth-child(11) {
     min-width: 200px;
     max-width: 300px;
     white-space: normal;
 }
 
-#sw_req td:nth-child(11) {
+#sw_req td:nth-child(12) {
     min-width: 130px;
     white-space: nowrap;
 }
@@ -248,3 +253,6 @@
 
 
 
+th .user-resizable-column {
+    resize: both;
+}

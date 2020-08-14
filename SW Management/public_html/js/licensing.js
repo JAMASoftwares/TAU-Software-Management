@@ -14,16 +14,17 @@ const col_sw_version = "col1";
 const col_yksikko = "col2";
 const col_email = "col3";
 const col_luokat = "col4";
-const col_tarve = "col5";
-const col_lisatieto = "col6";
-const col_lh_kommentit = "col7";
-const col_lh_swreg = "col8";
-const col_lh_smadi = "col9";
-const col_lh_pak_tnro = "col10";
-const col_pak_asennustapa = "col11";
-const col_pak_paketoitu = "col12";
-const col_pak_asennettu = "col13";
-const col_pak_tilannetieto = "col14";
+const col_tarve_alku = "col5";
+const col_tarve_loppu = "col6";
+const col_lisatieto = "col7";
+const col_lh_kommentit = "col8";
+const col_lh_swreg = "col9";
+const col_lh_smadi = "col10";
+const col_lh_pak_tnro = "col11";
+const col_pak_asennustapa = "col12";
+const col_pak_paketoitu = "col13";
+const col_pak_asennettu = "col14";
+const col_pak_tilannetieto = "col15";
 const col_edit = "col16";
 
 const softwares2 =
@@ -127,21 +128,22 @@ var random_id = function () {
 //--->create table header > start
     tbl += '<thead>';
     tbl += '<tr>';
-    tbl += '<th onclick="sortTable(0)">Nimi</th>';
-    tbl += '<th onclick="sortTable(1)">Versio</th>';
-    tbl += '<th onclick="sortTable(2)">Yksikkö</th>';
-    tbl += '<th onclick="sortTable(3)">Email</th>';
-    tbl += '<th onclick="sortTable(4)">Luokat</th>';
-    tbl += '<th onclick="sortTable(5)">Tarveaika</th>';
-    tbl += '<th onclick="sortTable(6)">Lisätiedot</th>';
-    tbl += '<th class="lisenssih" onclick="sortTable(7)">Lisenssinh. kommentit</th>';
-    tbl += '<th class="lisenssih" onclick="sortTable(8)">Efecte swreg</th>';
-    tbl += '<th class="lisenssih" onclick="sortTable(9)">Smadikortti nro.</th>';
-    tbl += '<th class="lisenssih" onclick="sortTable(10)">Paketointi tikettinro.</th>';
-    tbl += '<th class="paketointi" onclick="sortTable(11)">Asennustapa</th>';
-    tbl += '<th class="paketointi" onclick="sortTable(12)">Paketoitu</th>';
-    tbl += '<th class="paketointi" onclick="sortTable(13)">Asennettu</th>';
-    tbl += '<th class="paketointi" onclick="sortTable(14)">Tilannetieto</th>';
+    tbl += '<th onclick="sortTable(0)"><div class="user-resizable-column">Nimi</div></th>';
+    tbl += '<th onclick="sortTable(1)"><div class="user-resizable-column">Versio</div></th>';
+    tbl += '<th onclick="sortTable(2)"><div class="user-resizable-column">Yksikkö</div></th>';
+    tbl += '<th onclick="sortTable(3)"><div class="user-resizable-column">Email</div></th>';
+    tbl += '<th onclick="sortTable(4)"><div class="user-resizable-column">Luokat</div></th>';
+    tbl += '<th onclick="sortTable(5)"><div class="user-resizable-column">Tarve alku</div></th>';
+    tbl += '<th onclick="sortTable(6)"><div class="user-resizable-column">Tarve loppu</div></th>';
+    tbl += '<th onclick="sortTable(7)"><div class="user-resizable-column">Lisätiedot</div></th>';
+    tbl += '<th class="lisenssih" onclick="sortTable(8)"><div class="user-resizable-div">Lh. kommentit</div></th>';
+    tbl += '<th class="lisenssih" onclick="sortTable(9)"><div class="user-resizable-div">Efecte swreg</div></th>';
+    tbl += '<th class="lisenssih" onclick="sortTable(10)"><div class="user-resizable-div">Smadikortti nro.</div></th>';
+    tbl += '<th class="lisenssih" onclick="sortTable(11)"><div class="user-resizable-div">Pk. tikettinro.</div></th>';
+    tbl += '<th class="paketointi" onclick="sortTable(12)"><div class="user-resizable-div">Asennustapa</div></th>';
+    tbl += '<th class="paketointi" onclick="sortTable(13)"><div class="user-resizable-div">Paketoitu</div></th>';
+    tbl += '<th class="paketointi" onclick="sortTable(14)"><div class="user-resizable-div">Asennettu</div></th>';
+    tbl += '<th class="paketointi" onclick="sortTable(15)"><div class="user-resizable-div">Tilannetieto</div></th>';
     tbl += '<th>Edit</th>';
     tbl += '</tr>';
     tbl += '</thead>';
@@ -154,7 +156,7 @@ var random_id = function () {
     $.each(softwares, function (index, val) {
         //you can replace with your database row id
         const row_id = random_id();
-        
+
         // Data formatting for specific table cells
         // For emails (just for sorting emails by ASC or DESC)
         const email_list = val['tilaaja_email'].split(/\n+/g);
@@ -165,7 +167,7 @@ var random_id = function () {
                 email_string += email_list[j] + '\n';
             } else {
                 email_string += email_list[j];
-            }    
+            }
         }
         // For classes
         // Tämä järjestää listan, mutta myös muuttaa luokkatietoa sisältävän rivin,
@@ -175,7 +177,7 @@ var random_id = function () {
         class_list.sort();
         var class_string = "";
         for (var j = 0; j < class_list.length; j++) {
-            if ( j < class_list.length - 1) {
+            if (j < class_list.length - 1) {
                 class_string += class_list[j] + '\n';
             } else {
                 class_string += class_list[j];
@@ -183,13 +185,13 @@ var random_id = function () {
         }
         // For needed period
         /*
-        const parts = val['tarveaika'].split(/,|\n+/g);
-        var needed_string = "";
-        for (var j = 0; j < parts.length; j++) {
-            needed_string += parts[j] + "\n";
-        }
-        */
-       
+         const parts = val['tarveaika'].split(/,|\n+/g);
+         var needed_string = "";
+         for (var j = 0; j < parts.length; j++) {
+         needed_string += parts[j] + "\n";
+         }
+         */
+
         //loop through ajax row data
         tbl += '<tr row_id="' + row_id + '">';
         // Taulukon yksittäisen rivin solut
@@ -200,13 +202,14 @@ var random_id = function () {
         tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="yksikkö">' + val['yksikkö'] + '</div></td>';
         tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="tilaaja_email">' + email_string + '</div></td>';
         tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="luokat">' + class_string + '</div></td>';
-        tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="tarveaika">' + val['tarveaika'] + '</div></td>';
+        tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="tarveaika">' + val['tarve_alku'] + '</div></td>';
+        tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="tarveaika">' + val['tarve_loppu'] + '</div></td>';
         tbl += '<td class="sp"><div class="additions row_data" edit_type="click" col_name="lisätiedot">' + val['lisätiedot'] + '</div></td>';
         // Lisenssinhallinnan sarakkeet
         tbl += '<td class="sp licensing"><div class="row_data" edit_type="click" col_name="lh_kommentit">' + val['lh_kommentit'] + '</div></td>';
         tbl += '<td class="sp licensing"><div class="row_data" edit_type="click" col_name="sw_reg">' + val['sw_reg'] + '</div></td>';
         tbl += '<td class="sp licensing"><div class="row_data" edit_type="click" col_name="smadikortti_nro">' + val['smadikortti_nro'] + '</div></td>';
-        tbl += '<td class="sp licensing"><div class="row_data" edit_type="click" col_name="pak-pyynto_tik-nro">' + val['pak-pyynto_tik-nro'] + '</div></td>';
+        tbl += '<td class="sp licensing"><div class="row_data" edit_type="click" col_name="pak-pyynto_tik-nro">' + val['pak_pyynto_tik_nro'] + '</div></td>';
         // Paketoinnin sarakkeet
         tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="asennustapa">' + val['asennustapa'] + '</div></td>';
         tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="packaged">' + val['packaged'] + '</div></td>';
@@ -301,7 +304,7 @@ var random_id = function () {
         tbl_row.find('.btn_cancel').hide();
         //show edit button
         tbl_row.find('.btn_edit').show();
-        
+
         //make the whole row editable
         tbl_row.find('.row_data')
                 .attr('edit_type', 'click')
@@ -310,7 +313,7 @@ var random_id = function () {
         tbl_row.find('.row_data').each(function (index, val) {
             $(this).html($(this).attr('original_entry'));
         });
-        
+
     });
 //--->button > cancel > end
 
@@ -326,24 +329,24 @@ var random_id = function () {
         tbl_row.find('.btn_cancel').hide();
         //show edit button
         tbl_row.find('.btn_edit').show();
-        
+
         //make the whole row editable
         tbl_row.find('.row_data')
                 .attr('edit_type', 'click')
                 .removeClass('bg-warning')
                 .css('padding', '');
-        
+
         //--->get row data > start
         const arr = {};
         tbl_row.find('.row_data').each(function (index, val) {
             var col_name = $(this).attr('col_name');
             console.log("Saatiin sarakenimi: " + col_name);
-            var col_val = $(this).html().replace(/<div>/g,"\n").replace(/<\/div>/g,"").replace(/<br>/g,"\n").trim();
+            var col_val = $(this).html().replace(/<div>/g, "\n").replace(/<\/div>/g, "").replace(/<br>/g, "\n").trim();
             console.log("Saatiin sarakearvo: " + col_val);
             arr[col_name] = col_val;
         });
         //--->get row data > end
-        
+
         /* Muotoillaan kerätty data tietokannan edellyttämään muotoon 
          * (Tämä on vain datan esitystapaa koskeva muotoseikka) */
         console.log(arr);
@@ -354,7 +357,7 @@ var random_id = function () {
         $.extend(arr, {row_id: row_id});
         //out put to show
         $('.post_msg').html('<pre-wrap class="bg-success">' + JSON.stringify(arr, null, 2) + '</pre-wrap>');
-        
+
         // This will write changes into database
         toJSON(arr);
         //location.reload();
@@ -374,14 +377,14 @@ var random_id = function () {
                 .css('padding', '');
         var col_name = row_div.attr('col_name');
         var col_val = row_div.html();
-        
+
         var arr = {};
         arr[col_name] = col_val;
         //use the "arr"	object for your ajax call
         $.extend(arr, {row_id: row_id});
         //out put to show
         $('.post_msg').html('<pre-wrap class="bg-success">' + JSON.stringify(arr, null, 2) + '</pre-wrap>');
-        
+
         // TODO: INCLUDE TABLE CELL CHANGES HERE!!!
 
     });
@@ -401,9 +404,101 @@ var random_id = function () {
         }
 
     });
-
+    
+    resizableGrid(tbl);
 
 })();
+
+// This is for table column resizing
+//var tables = document.getElementsByClassName('flexiCol');
+function resizableGrid(table) {
+    var row = table.getElementsByTagName('tr')[0],
+            cols = row ? row.children : undefined;
+    if (!cols)
+        return;
+
+    table.style.overflow = 'hidden';
+
+    var tableHeight = table.offsetHeight;
+
+    for (var i = 0; i < cols.length; i++) {
+        var div = createDiv(tableHeight);
+        cols[i].appendChild(div);
+        cols[i].style.position = 'relative';
+        setListeners(div);
+    }
+
+    function setListeners(div) {
+        var pageX, curCol, nxtCol, curColWidth, nxtColWidth;
+
+        div.addEventListener('mousedown', function (e) {
+            curCol = e.target.parentElement;
+            nxtCol = curCol.nextElementSibling;
+            pageX = e.pageX;
+
+            var padding = paddingDiff(curCol);
+
+            curColWidth = curCol.offsetWidth - padding;
+            if (nxtCol)
+                nxtColWidth = nxtCol.offsetWidth - padding;
+        });
+
+        div.addEventListener('mouseover', function (e) {
+            e.target.style.borderRight = '2px solid black';
+        });
+
+        div.addEventListener('mouseout', function (e) {
+            e.target.style.borderRight = '';
+        });
+
+        document.addEventListener('mousemove', function (e) {
+            if (curCol) {
+                var diffX = e.pageX - pageX;
+
+                if (nxtCol)
+                    nxtCol.style.width = (nxtColWidth - (diffX)) + 'px';
+
+                curCol.style.width = (curColWidth + diffX) + 'px';
+            }
+        });
+
+        document.addEventListener('mouseup', function (e) {
+            curCol = undefined;
+            nxtCol = undefined;
+            pageX = undefined;
+            nxtColWidth = undefined;
+            curColWidth = undefined;
+        });
+    }
+
+    function createDiv(height) {
+        var div = document.createElement('div');
+        div.style.top = 0;
+        div.style.right = 0;
+        div.style.width = '5px';
+        div.style.position = 'absolute';
+        div.style.cursor = 'col-resize';
+        div.style.userSelect = 'none';
+        div.style.height = height + 'px';
+        return div;
+    }
+
+    function paddingDiff(col) {
+
+        if (getStyleVal(col, 'box-sizing') === 'border-box') {
+            return 0;
+        }
+
+        var padLeft = getStyleVal(col, 'padding-left');
+        var padRight = getStyleVal(col, 'padding-right');
+        return (parseInt(padLeft) + parseInt(padRight));
+
+    }
+
+    function getStyleVal(elm, css) {
+        return (window.getComputedStyle(elm, null).getPropertyValue(css));
+    }
+}
 
 function formatDataForDatabase(arr) {
     // Taulukosta luettu muotoiltu data
@@ -414,17 +509,17 @@ function formatDataForDatabase(arr) {
      * Korvataan "\n" merkillä ";".
      * 
      */
-    
+
     // Luovuttu email listojen formatoinnista
     /* var email_data = arr['tilaaja_email']; 
      * const fixed_email_data = email_data.replace(/\s+|\n+/g, ';');
      * arr['tilaaja_email'] = fixed_email_data; 
      */
-    
+
     var class_data = arr['luokat'];
     const fixed_class_data = class_data.replace(/\n+/g, ';');
     arr['luokat'] = fixed_class_data;
-    
+
 }
 
 function getClasses(row) {
@@ -493,7 +588,8 @@ function filterSoftwares() {
 function showDefaultColumnsForLicensing() {
     // Disabling some columns by default
     toggleCol(col_luokat);
-    toggleCol(col_tarve);
+    toggleCol(col_tarve_alku);
+    toggleCol(col_tarve_loppu);
     toggleCol(col_lisatieto);
     toggleCol(col_pak_asennettu);
     toggleCol(col_pak_asennustapa);
@@ -541,7 +637,8 @@ document.getElementById('customer_cols').addEventListener('click', function (eve
 document.getElementById('target_cols').addEventListener('click', function (event) {
     event.preventDefault();
     toggleCol(col_luokat);
-    toggleCol(col_tarve);
+    toggleCol(col_tarve_alku);
+    toggleCol(col_tarve_loppu);
 });
 document.getElementById('additions').addEventListener('click', function (event) {
     event.preventDefault();

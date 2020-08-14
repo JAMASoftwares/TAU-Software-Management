@@ -61,6 +61,7 @@ wss.on('connection', (ws, req) => {
             var sw_data = fs.readFileSync('data/requests.json');
             const sw_list = JSON.parse(sw_data);
             var sw_object_list_from_client = json_msg.data;
+            // Tämä ei tee muuta kuin synkronoi ohjelmistopyyntölistat muuttujan "accepted" suhteen.
             for (var i = 0; i < sw_object_list_from_client.length; i++) {
                 sw_list[i].accepted = sw_object_list_from_client[i].accepted;
             }

@@ -2,17 +2,17 @@
  Created on : 14 Jul 2020, 11.24.01
  Author     : Jarno Matarmaa <Tampereen Yliopisto>
  */
-
 const col_reject = "col0";
 const col_accept = "col1";
-const col_sw_name = "col2";
-const col_sw_version = "col3";
-const col_yksikko = "col4";
-const col_email = "col5";
-const col_luokat = "col6";
-const col_tarve_a = "col7";
-const col_tarve_b = "col8";
-const col_lisatieto = "col9";
+const col_reqid = "col2";
+const col_sw_name = "col3";
+const col_sw_version = "col4";
+const col_yksikko = "col5";
+const col_email = "col6";
+const col_luokat = "col7";
+const col_tarve_a = "col8";
+const col_tarve_b = "col9";
+const col_lisatieto = "col10";
 
 
 const constructTable = function (tableid, requests) {
@@ -54,7 +54,7 @@ const constructTable = function (tableid, requests) {
 
     for (var i = 0; i < requests.length; i++) {
         const row = document.createElement("tr");
-        
+  
         const td_rejected = document.createElement("td");
         td_rejected.style.alignItems = "center";
         var rejected = requests[i].rejected;
@@ -66,6 +66,9 @@ const constructTable = function (tableid, requests) {
         var accepted = requests[i].accepted;
         const checkbox_a = createAcceptedBox("", accepted);
         td_accepted.appendChild(checkbox_a);
+        
+        const td_reqid = document.createElement("td");
+        td_reqid.appendChild(document.createTextNode(requests[i].request_id));
 
         const td_name = document.createElement("td");
         td_name.appendChild(document.createTextNode(requests[i].name));
@@ -117,6 +120,7 @@ const constructTable = function (tableid, requests) {
 
         row.appendChild(td_rejected);
         row.appendChild(td_accepted);
+        row.appendChild(td_reqid);
         row.appendChild(td_name);
         row.appendChild(td_versio);
         row.appendChild(td_vastuuyksikot);
@@ -413,7 +417,7 @@ function sortTable(n) {
 const saveList = function () {
     const data_table = document.getElementById("sw_req");
     const table_rows = data_table.querySelectorAll('tr');
-    var swnames_to_reject = [], swnames_to_accept = [];
+    var reqid_to_reject = [], reqid_to_accept = [];
     var i, row, row_accept_input, row_reject_input, swList = [];
 
     console.log("SW requests: " + (table_rows.length - 1));
@@ -422,26 +426,29 @@ const saveList = function () {
         row = table_rows[i];
         row_accept_input = row.querySelector('.accept-box');
         row_reject_input = row.querySelector('.reject-box');
+        
         if (row_accept_input.checked && !row_accept_input.disabled) {
-            swnames_to_accept.push(row.cells[2].innerHTML); // Lisää sovelluksen nimen listaan
+            reqid_to_accept.push(row.cells[2].innerHTML); // Lisää sovelluksen nimen listaan
             row.querySelectorAll('input').disabled = true;
         } else if (row_reject_input.checked && !row_reject_input.disabled) {
-            swnames_to_reject.push(row.cells[2].innerHTML); // Lisää sovelluksen nimen listaan
+            reqid_to_reject.push(row.cells[2].innerHTML); // Lisää sovelluksen nimen listaan
             row.querySelectorAll('input').disabled = true;
         }
     }
-    console.log("SW requests accepted: " + swnames_to_accept.length);
-    console.log("Accepted software: " + swnames_to_accept[0]);
-    console.log("SW requests rejected: " + swnames_to_reject.length);
-    console.log("Rejected software: " + swnames_to_reject[0]);
+    console.log("SW requests accepted: " + reqid_to_accept.length);
+    console.log("Accepted software: " + reqid_to_accept[0]);
+    console.log("SW requests rejected: " + reqid_to_reject.length);
+    console.log("Rejected software: " + reqid_to_reject[0]);
     // Päivitetään muiden käyttäjien varalta selaimen välimuistiin tallennettu sovelluslista
     updateSoftwareList();
 
     // Käydään läpi sovelluspyyntölista, joka on luettu muuttujaan 'requests'
+    // HUOM: Muutokset tulee tallentaa myös tietokantaan tai refresh hukkaa muutokset
     console.log("swList length before: " + swList.length);
     for (i = 0; i < requests.length; i++) {
         var sw_obj = requests[i];
-        if (!(swnames_to_accept.indexOf(sw_obj.name) < 0)) {
+        
+        if (!(reqid_to_accept.indexOf(sw_obj.request_id) < 0)) {
             sw_obj.accepted = true;
             swList.push(sw_obj);
         }
@@ -453,7 +460,10 @@ const saveList = function () {
     } else if (swList.length > 1) {
         listToJSON(swList);
     }
-
+    
+    // Tämä kirjoittaa tilausten tilamuutokset tietokantaan tiedostoon requests.json
+    // HUOMAA ero: listToJSON() -funktio kirjoittaa eri tiedostoon (software.json),
+    // joten sitä ei pidä käyttää tässä.
     requestListToJSON(requests);
 
     document.getElementById('table_save_button').style.display = "none";
@@ -482,6 +492,7 @@ function rejectList() {
 
 
 function showDefaultColumnsForRequests() {
+    toggleCol(col_reqid);
     toggleCol(col_yksikko);
     toggleCol(col_reject);
 }

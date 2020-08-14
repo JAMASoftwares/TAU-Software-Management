@@ -60,6 +60,7 @@ form {
 .orderform-elements {
     grid-row: 3;
     grid-column: 2 / span 2;
+    align-self: center;
     display: block;
     box-sizing: border-box;
     height: auto;
