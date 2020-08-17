@@ -18,14 +18,14 @@ Or
 # Project Screenshots
 
 <div align="center">
-    <img src="/accepted_sw.png" style="width: 100%; margin: 30px;">
-    <img src="/sw_order.png" style="width: 100%; margin: 30px;">
-    <img src="/ordered_sw.png" style="width: 100%; margin: 30px;">
+    <img src="/accepted_sw.png" style="width: 70%; margin: 30px;">
+    <img src="/sw_order.png" style="width: 70%; margin: 30px;">
+    <img src="/ordered_sw.png" style="width: 70%; margin: 30px;">
 </div>
 
 # Process schemas
 
 <div align="center">
     <br>
-    <img src="/Prosessikaavio.jpg" width="100%"</img>
+    <img src="/Prosessikaavio.jpg" width="70%"</img>
 </div>
