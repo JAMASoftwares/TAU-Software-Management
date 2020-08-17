@@ -157,22 +157,26 @@ footer {
     display: block;
     margin-top: 20px;
 }
+/*
 #chart_div {
     zoom: 1.2;
     -moz-transform: scale(1.2);
 }
+*/
 .text-content {
     margin-top: 10px;
 }
 .schema2 {
+    max-width: 100%;
     object-fit: scale-down;
 }
 
+/*
 #chart_div2 {
     zoom: 0.8;
-    -moz-transform: scale(1.2);
+    -moz-transform: scale(0.8);
 }
-
+*/
 
 
 @keyframes opacity {
