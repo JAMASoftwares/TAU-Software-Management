@@ -168,6 +168,11 @@ footer {
     object-fit: scale-down;
 }
 
+#chart_div2 {
+    zoom: 0.8;
+    -moz-transform: scale(1.2);
+}
+
 
 
 @keyframes opacity {
