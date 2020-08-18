@@ -23,9 +23,18 @@ const constructTable = function (tableid, softwares) {
 
         const td_versio = document.createElement("td");
         td_versio.appendChild(document.createTextNode(softwares[i].versio));
+        
+        const td_vastuuyksikot = document.createElement("td");        
+        const itemsToShow = extractString(softwares[i].yksikkö, '(', ')');
+        console.log(itemsToShow);
+        string = "";
+        for (var j = 0; j < itemsToShow.length; j++) {
+            string += itemsToShow[j] + "\n";
+        }
+        td_vastuuyksikot.appendChild(document.createTextNode(string));
 
-        const td_yksikkö = document.createElement("td");
-        td_yksikkö.appendChild(document.createTextNode(softwares[i].yksikkö));
+        // const td_yksikkö = document.createElement("td");
+        //td_yksikkö.appendChild(document.createTextNode(softwares[i].yksikkö));
 
         const td_tilaaja_email = document.createElement("td");
         const email_list = softwares[i].tilaaja_email.split(/[\n;]+/);
@@ -57,16 +66,13 @@ const constructTable = function (tableid, softwares) {
         }
         td_luokat.appendChild(document.createTextNode(string));
 
-        const td_tarveaika = document.createElement("td");
+        const td_tarve_a = document.createElement("td");
+        td_tarve_a.appendChild(document.createTextNode(softwares[i].tarve_alku));
         
-        /*
-        const parts = softwares[i].tarveaika.split(',');
-        string = "";
-        for (var j = 0; j < parts.length; j++) {
-            string += parts[j] + "\n";
-        }
-        */
-        td_tarveaika.appendChild(document.createTextNode(softwares[i].tarveaika));
+        const td_tarve_l = document.createElement("td");
+        td_tarve_l.appendChild(document.createTextNode(softwares[i].tarve_loppu));
+        //const td_tarveaika = document.createElement("td");
+        //td_tarveaika.appendChild(document.createTextNode(softwares[i].tarveaika));
 
         const td_lisätiedot = document.createElement("td");
         td_lisätiedot.appendChild(document.createTextNode(softwares[i].lisätiedot));
@@ -74,10 +80,11 @@ const constructTable = function (tableid, softwares) {
 
         row.appendChild(td_name);
         row.appendChild(td_versio);
-        row.appendChild(td_yksikkö);
+        row.appendChild(td_vastuuyksikot);
         row.appendChild(td_tilaaja_email);
         row.appendChild(td_luokat);
-        row.appendChild(td_tarveaika);
+        row.appendChild(td_tarve_a);
+        row.appendChild(td_tarve_l);
         row.appendChild(td_lisätiedot);
 
         table.appendChild(row);

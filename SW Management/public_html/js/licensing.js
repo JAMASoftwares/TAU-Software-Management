@@ -158,6 +158,15 @@ var random_id = function () {
         const row_id = random_id();
 
         // Data formatting for specific table cells
+        // For Yksikkö formatting. Getting value between brackets "()"       
+        const itemsToShow = extractString(val['yksikkö'], '(', ')');
+        console.log(itemsToShow);
+        var yksikko_string = "";
+        for (var j = 0; j < itemsToShow.length; j++) {
+            yksikko_string += itemsToShow[j] + "\n";
+        }
+        
+        
         // For emails (just for sorting emails by ASC or DESC)
         const email_list = val['tilaaja_email'].split(/\n+/g);
         email_list.sort();
@@ -199,7 +208,7 @@ var random_id = function () {
         tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="name">' + val['name'] + '</div></td>';
         tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="versio">' + val['versio'] + '</div></td>';
         // Asiakkaan tiedot ja kohdennus
-        tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="yksikkö">' + val['yksikkö'] + '</div></td>';
+        tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="yksikkö">' + yksikko_string + '</div></td>';
         tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="tilaaja_email">' + email_string + '</div></td>';
         tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="luokat">' + class_string + '</div></td>';
         tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="tarveaika">' + val['tarve_alku'] + '</div></td>';

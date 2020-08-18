@@ -90,7 +90,7 @@
   {
     "name": "Microsoft Visio",
     "versio": "2016",
-    "yksikkö": "TAMK/LITO, TAMK/Konetekniikka",
+    "yksikkö": "(TAMK/LITO), (TAMK/Konetekniikka)",
     "tilaaja_email": "anne.sahi@tuni.fi\njuuso.huhtiniemi@tuni.fi",
     "luokat": "Vakio-ohjelmisto",
     "tarve_alku": "2020-10-01",
@@ -112,7 +112,7 @@
   {
     "name": "Rhino",
     "versio": "6.19.19295.01001",
-    "yksikkö": "TAU K&O, TAU BEN",
+    "yksikkö": "(TAU K&O), (TAU BEN)",
     "tilaaja_email": "toni.teittinen@tuni.fi\nmika.kiirikki@tuni.f\nmartti.lamppu@tuni.fi",
     "luokat": "HRM205;HRG100C;HSB101;HRH216;HRArkSPCs;HRD202",
     "tarve_alku": "2020-10-01",
