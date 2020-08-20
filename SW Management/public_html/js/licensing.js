@@ -211,14 +211,14 @@ var random_id = function () {
         tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="yksikkö">' + yksikko_string + '</div></td>';
         tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="tilaaja_email">' + email_string + '</div></td>';
         tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="luokat">' + class_string + '</div></td>';
-        tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="tarveaika">' + val['tarve_alku'] + '</div></td>';
-        tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="tarveaika">' + val['tarve_loppu'] + '</div></td>';
+        tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="tarve_alku">' + val['tarve_alku'] + '</div></td>';
+        tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="tarve_loppu">' + val['tarve_loppu'] + '</div></td>';
         tbl += '<td class="sp"><div class="additions row_data" edit_type="click" col_name="lisätiedot">' + val['lisätiedot'] + '</div></td>';
         // Lisenssinhallinnan sarakkeet
         tbl += '<td class="sp licensing"><div class="row_data" edit_type="click" col_name="lh_kommentit">' + val['lh_kommentit'] + '</div></td>';
         tbl += '<td class="sp licensing"><div class="row_data" edit_type="click" col_name="sw_reg">' + val['sw_reg'] + '</div></td>';
         tbl += '<td class="sp licensing"><div class="row_data" edit_type="click" col_name="smadikortti_nro">' + val['smadikortti_nro'] + '</div></td>';
-        tbl += '<td class="sp licensing"><div class="row_data" edit_type="click" col_name="pak-pyynto_tik-nro">' + val['pak_pyynto_tik_nro'] + '</div></td>';
+        tbl += '<td class="sp licensing"><div class="row_data" edit_type="click" col_name="pak_pyynto_tik_nro">' + val['pak_pyynto_tik_nro'] + '</div></td>';
         // Paketoinnin sarakkeet
         tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="asennustapa">' + val['asennustapa'] + '</div></td>';
         tbl += '<td class="sp"><div class="row_data" edit_type="click" col_name="packaged">' + val['packaged'] + '</div></td>';
@@ -524,6 +524,9 @@ function formatDataForDatabase(arr) {
      * const fixed_email_data = email_data.replace(/\s+|\n+/g, ';');
      * arr['tilaaja_email'] = fixed_email_data; 
      */
+    var yksikko_data = arr['yksikkö'];
+    const fixed_yksikko_data = "(" + yksikko_data + ")";
+    arr['yksikkö'] = fixed_yksikko_data;
 
     var class_data = arr['luokat'];
     const fixed_class_data = class_data.replace(/\n+/g, ';');

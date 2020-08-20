@@ -29,9 +29,9 @@ wss.on('connection', (ws, req) => {
             const sw_list = JSON.parse(sw_data);
             if (swExist(sw_list, json_msg.data)) {
                 overWriteSoftware(sw_list, json_msg.data);
+            } else {
+                sw_list.push(json_msg.data);
             }
-            sw_list.push(json_msg.data);
-            sortTable(sw_list);
             sw_data = JSON.stringify(sw_list, null, 2);
             fs.writeFile('data/software.json', sw_data, finished);
 
@@ -166,10 +166,36 @@ function overWriteSoftware(sw_list, sw_obj) {
 
     const swobject = sw_list.find(sw => sw.name === sw_obj.name);
     console.log("Found object by name: " + swobject.name);
+    swobject.name = sw_obj.name;
+    swobject.versio = sw_obj.versio;
+    swobject.luokat = sw_obj.luokat;
+    swobject.tilaaja_email = sw_obj.tilaaja_email;
 
     for (var i = 0; i < sw_list.length; i++) {
         if (sw_list[i].name === sw_obj.name) {
-            sw_list.splice(i, 1);
+            // Muokattavat tiedot
+            sw_list[i].yksikkö = sw_obj.yksikkö;
+            sw_list[i].tilaaja_email = sw_obj.tilaaja_email;
+            sw_list[i].luokat = sw_obj.luokat;
+            sw_list[i].lisätiedot = sw_obj.lisätiedot;
+            sw_list[i].lh_kommentit = sw_obj.lh_kommentit;
+            sw_list[i].sw_reg = sw_obj.sw_reg;
+            sw_list[i].smadikortti_nro = sw_obj.smadikortti_nro;
+            sw_list[i].pak_pyynto_tik_nro = sw_obj.pak_pyynto_tik_nro;
+            sw_list[i].asennustapa = sw_obj.asennustapa;
+            sw_list[i].tilannetieto = sw_obj.tilannetieto;
+            if (sw_obj.packaged === "false") {
+                sw_list[i].packaged = false;
+            } else if (sw_obj.packaged === "true") {
+                sw_list[i].packaged = true;
+            }
+            if (sw_obj.installed === "false") {
+                sw_list[i].installed = false;
+            } else if (sw_obj.installed === "true") {
+                sw_list[i].installed = true;
+            }
+            
+            //sw_list.splice(i, 1);
             break;
         }
     }

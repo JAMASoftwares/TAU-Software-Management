@@ -159,5 +159,28 @@
     "packaged": false,
     "installed": false,
     "request_id": "111"
+  },
+  {
+    "name": "Xcode",
+    "versio": "10.1.14",
+    "yksikkö": "TAU Informaatioteknologia ja viestintä (ITC)",
+    "tilaaja_email": "janne.jarvinen@tuni.fi",
+    "luokat": "HSM221;HSM208;HRM205;HRD202;HRG100C;HSM213",
+    "tarve_alku": "2020.11.10",
+    "tarve_loppu": "2021.02.28",
+    "lisätiedot": "Xcode is an integrated development environment for macOS containing a suite of software development tools developed by Apple for developing software for macOS, iOS, iPadOS, watchOS, and tvOS.",
+    "req_date": "2020-8-20 23:39",
+    "lh_kommentit": "",
+    "sw_reg": "",
+    "smadikortti_nro": "",
+    "pak_pyynto_tik_nro": "",
+    "asennustapa": "",
+    "tilannetieto": "",
+    "rejected": false,
+    "accepted": true,
+    "licensed": false,
+    "packaged": false,
+    "installed": false,
+    "request_id": "ZHSXco20208202339"
   }
 ]
