@@ -9,11 +9,11 @@
         "browser"
     ],
     "author": "Jarno Matarmaa <Tampereen Yliopisto>",
-    "contributors": [
-    ],
-    "dependencies": {},
+    "contributors": [],
+    "dependencies": {
+        "@editorjs/editorjs": "^2.18.0"
+    },
     "scripts": {
-        "start": "node public_html\/js\/test.js"
+        "start": "node public_html/js/test.js"
     }
-
 }

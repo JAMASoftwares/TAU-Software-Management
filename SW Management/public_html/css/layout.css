@@ -7,12 +7,23 @@ body {
     display: grid;
     grid-template:  auto auto auto auto auto / 300px auto auto; /* 4 x 3 grid */
     background-color:  #ddd;
-    margin: 20px;
+    padding: 0px;
     /* Congruent font family style for whole site */
     font-family: system-ui;
 }
 
 /* SITE HEADER elements */
+.gridrow1 {
+    background: linear-gradient(to top, var(--main-site-color) 0%, white 30%);
+    margin: -10px -10px 0px -10px;
+    padding: 15px 15px 15px 15px;
+}
+
+.gridrow2 {
+    background-color: var(--main-site-color);
+    margin: 0px 0px 0px 0px;
+}
+
 .header {
     grid-row: 1;
     grid-column: 2;
@@ -29,13 +40,37 @@ body {
 }
 
 .div-page_header {
-    height: 40px;
+    grid-row: 2;
+    grid-column: 2 / span 2;
+    height: var(--navbar-height);
+    margin-right: -10px;
 }
 
 #tau-logo {
     grid-row: 1;
     grid-column: 1;
-    width: 15rem
+    width: 15rem;
+    margin-bottom: 10px;
+}
+
+.tools {
+    display: flex;
+    flex-flow:row-reverse;
+    align-content: center;
+}
+
+#login-button {
+    background-color: #3b3b3b;
+    height: 40px;
+    width: 45px;
+    margin: 10px;
+}
+
+.background-div {
+    grid-row: 2;
+    grid-column: 1;
+    background-color: var(--main-site-color);
+    margin-left: -10px;
 }
 
 h1 {
@@ -54,13 +89,6 @@ h3 {
     margin: var(--default-margin) 0px;
 }
 
-.div-page_header {
-    grid-row: 2;
-    grid-column: 2 / span 2;
-    height: var(--navbar-height);
-    background-color: var(--main-site-color);
-}
-
 /* MENU elements */
 .menu {
     grid-row: 2 / span 2;
@@ -76,9 +104,10 @@ footer {
     grid-row: 5;
     grid-column: 1 / span 3;
     justify-content: center;
-    height: 8vh;
+    height: auto;
     align-items: center;
     padding: 15px;
+    margin: 0px -10px -10px -10px;
     background-color: var(--main-site-color);
     color: var(--main-text-color);
 }
@@ -93,6 +122,9 @@ footer {
     font-size: 16px;
     text-shadow: 0px 0px 2px #ddd;
     color: #000;
+}
+#netbeans {
+    width: 150px;
 }
 
 /* installlist.html */
@@ -157,12 +189,7 @@ footer {
     display: block;
     margin-top: 20px;
 }
-/*
-#chart_div {
-    zoom: 1.2;
-    -moz-transform: scale(1.2);
-}
-*/
+
 .text-content {
     margin-top: 10px;
 }
@@ -171,12 +198,6 @@ footer {
     object-fit: scale-down;
 }
 
-/*
-#chart_div2 {
-    zoom: 0.8;
-    -moz-transform: scale(0.8);
-}
-*/
 
 
 @keyframes opacity {

@@ -99,7 +99,7 @@
     "luokat": "Hervanta;HRG100C;HRM205;TAMK A3-15;TAMK B3-23;Vakio-ohjelmisto",
     "tarve_alku": "2020-09-07",
     "tarve_loppu": "2021-05-24",
-    "lisätiedot": "Tarvitaan koko ajan",
+    "lisätiedot": "NetBeans on integroitu ohjelmointiympäristö Java-, JavaScript-, PHP-, Python-, Ruby-, Groovy-, C-, C++-, Scala- ja Clojure-ohjelmointikielille. NetBeans on myös sovellusalusta Java-ohjelmointikielelle. NetBeans on kirjoitettu Java-ohjelmointikielellä, joten sen käyttäminen vaatii Javan ajoympäristön.",
     "req_date": "2020-7-30 17:58",
     "lh_kommentit": "",
     "sw_reg": "",
@@ -182,5 +182,28 @@
     "packaged": false,
     "installed": false,
     "request_id": "ZHSXco20208202339"
+  },
+  {
+    "name": "Brackets",
+    "versio": "1.14.1",
+    "yksikkö": "TAU Tekniikka ja luonnontieteet (ENS)",
+    "tilaaja_email": "jarno.matarmaa@tuni.fi",
+    "luokat": "HSM213;HRG100C;HRH216;HRM205;HRD202",
+    "tarve_alku": "2020.10.06",
+    "tarve_loppu": "2021.04.30",
+    "lisätiedot": "Brackets is a source code editor with a primary focus on web development. Created by Adobe Systems, it is free and open-source software licensed under the MIT License, and is currently maintained on GitHub by Adobe and other open-source developers. It is written in JavaScript, HTML and CSS.",
+    "req_date": "2020-8-26 14:6",
+    "lh_kommentit": "",
+    "sw_reg": "",
+    "smadikortti_nro": "",
+    "pak_pyynto_tik_nro": "",
+    "asennustapa": "",
+    "tilannetieto": "",
+    "rejected": false,
+    "accepted": true,
+    "licensed": false,
+    "packaged": false,
+    "installed": false,
+    "request_id": "QBKBra2020826146"
   }
 ]

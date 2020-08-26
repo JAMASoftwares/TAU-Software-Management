@@ -70,78 +70,9 @@ wss.on('connection', (ws, req) => {
             fs.writeFile('data/requests.json', sw_data, finished);
 
         }
-
         console.log(msg);
-
-    });
-    
+    }); 
 });
-
-/*
-wss.on('json', (msg) => {
-
-    var json_msg = JSON.parse(msg);
-
-    console.log("Datatype 'json' received!");
-    var sw_data = fs.readFileSync('data/software.json');
-    const sw_list = JSON.parse(sw_data);
-
-    if (swExist(sw_list, json_msg.data)) {
-        overWriteSoftware(sw_list, json_msg.data);
-    }
-    sw_list.push(json_msg.data);
-    sortTable(sw_list);
-
-    sw_data = JSON.stringify(sw_list, null, 2);
-    fs.writeFile('data/software.json', sw_data, finished);
-});
-
-wss.on('json-list', (msg) => {
-
-    var json_msg = JSON.parse(msg);
-
-    console.log("Datatype 'json-list' received!");
-    var sw_data = fs.readFileSync('data/software.json');
-    const sw_list = JSON.parse(sw_data);
-    var sw_object_list_from_client = json_msg.data;
-
-    for (var i = 0; i < sw_object_list_from_client.length; i++) {
-        sw_list.push(sw_object_list_from_client[i]);
-    }
-    //sortTable(sw_list);
-    sw_data = JSON.stringify(sw_list, null, 2);
-    fs.writeFile('data/software.json', sw_data, finished);
-});
-
-wss.on('json-req', (msg) => {
-
-    var json_msg = JSON.parse(msg);
-
-    console.log("Datatype 'json' received!");
-    var sw_data = fs.readFileSync('data/requests.json');
-    const sw_list = JSON.parse(sw_data);
-    sw_list.push(json_msg.data);
-    //sortTable(sw_list);
-    sw_data = JSON.stringify(sw_list, null, 2);
-    fs.writeFile('data/requests.json', sw_data, finished);
-});
-
-wss.on('json-req-list', (msg) => {
-
-    var json_msg = JSON.parse(msg);
-
-    console.log("Datatype 'json-list' received!");
-    var sw_data = fs.readFileSync('data/requests.json');
-    const sw_list = JSON.parse(sw_data);
-    var sw_object_list_from_client = json_msg.data;
-    for (var i = 0; i < sw_object_list_from_client.length; i++) {
-        sw_list[i].accepted = sw_object_list_from_client[i].accepted;
-    }
-    //sortTable(sw_list);
-    sw_data = JSON.stringify(sw_list, null, 2);
-    fs.writeFile('data/requests.json', sw_data, finished);
-});
-*/
 
 function finished(err) {
     console.log("Objects are written into file. All set.");
