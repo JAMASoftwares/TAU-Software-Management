@@ -15,12 +15,14 @@ Run it via terminal/command prompt like this (mac/linux):
 Or
 - node ws-server.js
 
-# Project Screenshots
+<h3> Project Screenshots </h3>
 
 <div align="center">
-    <img src="/accepted_sw.png" style="width: 70%; margin: 30px;">
-    <img src="/sw_order.png" style="width: 70%; margin: 30px;">
-    <img src="/ordered_sw.png" style="width: 70%; margin: 30px;">
+    <img src="/acceptedsw.png" style="width: 70%; margin: 30px;">
+    <img src="/sworderform.png" style="width: 70%; margin: 30px;">
+    <img src="/requestofsw.png" style="width: 70%; margin: 30px;">
+    <img src="/licensingsw.png" style="width: 70%; margin: 30px;">
+    <img src="/footer.png" style="width: 70%; margin: 30px;">
 </div>
 
 # Process schemas
