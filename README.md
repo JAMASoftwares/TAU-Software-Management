@@ -9,11 +9,12 @@ Highly recommended is to use Nodemon which is available in npm.
 Websocket server file is located in /SW Management/public_html/webserver/
 
 Run it via terminal/command prompt like this (mac/linux):
-- npm install -g nodemon
-- nodemon ws-server.js 
-
-Or
 - node ws-server.js
+Or
+- npm install -g nodemon
+- nodemon --ext js ws-server.js
+
+Needed --ext js for skipping changes in json files. By default nodemon restarts automatically after modifying javascript or JSON files. But for now we cannot start new session after writing into JSON database. That causes errors when editing table.
 
 <h3> Project Screenshots </h3>
 
