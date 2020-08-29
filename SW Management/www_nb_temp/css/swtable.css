@@ -80,7 +80,7 @@
 #sw_stats tr:hover { background-color: lightgray; }
 
 #sw_stats td:nth-child(1), td:nth-child(2) {
-    white-space: nowrap;   
+    white-space: nowrap;
 }
 
 #sw_stats td:nth-child(2) {

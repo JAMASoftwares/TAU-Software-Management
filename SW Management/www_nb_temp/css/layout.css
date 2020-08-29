@@ -5,81 +5,127 @@
 
 body {
     display: grid;
-    grid-template:  auto auto auto auto auto / 300px auto auto; /* 4 x 3 grid */
-    background-color:  #ddd;
+    grid-template:  auto auto auto auto auto / auto auto auto; /* 4 x 3 grid */
+    background-color:  lightgray;
     padding: 0px;
     /* Congruent font family style for whole site */
     font-family: system-ui;
 }
 
-/* SITE HEADER elements */
+/* GRID ROW 1 */
 .gridrow1 {
-    background: linear-gradient(to top, var(--main-site-color) 0%, white 30%);
-    margin: -10px -10px 0px -10px;
-    padding: 15px 15px 15px 15px;
-}
-
-.gridrow2 {
-    background-color: var(--main-site-color);
-    margin: 0px 0px 0px 0px;
-}
-
-.header {
     grid-row: 1;
-    grid-column: 2;
+    grid-column: 1 / span 3;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-content: center;
+    background-image: url('../img/pinni.jpg');
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    background-size: cover;
+    margin: -10px -10px -40px -10px;
+    padding: 30px 15px 30px 15px;
+}
+.header {
+    font-family:"Courier New", Lucida Console, sans-serif;
+    font-size: 16px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+#page-logo {
+    height: 7rem;
+}
+#tau-flag {
+    height: 13rem;
+    
 }
 
+/* GRID ROW 2 */
+.gridrow2 {
+    grid-row: 2;
+    grid-column: 1 / span 3;
+    display: flex;
+    margin-right: -10px;
+    margin-left: -10px;
+    background: linear-gradient(to top, var(--main-site-color) 60%, transparent 100%);
+}
+.accordion-visibility-div {
+    display: flex;
+    flex-direction: column-reverse;
+    
+}
 #page_header {
     color: white;
     font-weight: bolder;
     margin-left: var(--default-margin);
 }
-
 .div-page_header {
-    grid-row: 2;
-    grid-column: 2 / span 2;
+    display: flex;
+    justify-content: space-between;
     height: var(--navbar-height);
-    margin-right: -10px;
+    width: 100%;
+    padding-top: 40px;
 }
 
-#tau-logo {
-    grid-row: 1;
-    grid-column: 1;
-    width: 15rem;
-    margin-bottom: 10px;
+/* GRID ROW 3 */
+.gridrow3 {
+    grid-row: 3;
+    grid-column: 1 / span 3;
+    display: flex;
+}
+#accordion-div {
+    padding: 0px 3px 3px 0px;
+    box-sizing: border-box;
+    width: 330px;
+    border-radius: 0.1rem;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-left: -8px;
+}
+.page-content {
+    display: flex;
+    width: 100%;
+    align-content: center;
+    flex-direction: column;
+    min-height: 1000px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+#image-div {
+    display: flex;
+    justify-content: flex-end;
+    width: 35vw;
+    height: 13rem;
+    background: linear-gradient(to left, white 60%, transparent 100%);
+    margin: -30px -13px -30px 0px;
 }
 
 .tools {
     display: flex;
     flex-flow:row-reverse;
     align-content: center;
+    margin-right: 20px;
 }
 
 #login-button {
     background-color: #3b3b3b;
     height: 40px;
-    width: 45px;
+    width: 40px;
     margin: 10px;
 }
 
-.background-div {
-    grid-row: 2;
-    grid-column: 1;
-    background-color: var(--main-site-color);
-    margin-left: -10px;
+#login-button:focus {
+    outline: none;
 }
 
-h1 {
-    align-self: center;
-    font-size: 24px;
+#login-logo:active {
+    transform: scale(1.1);
 }
 
 h3 {
-    display: inline-block;
     font-weight: lighter;
     align-self: flex-start;
     color: var(--main-site-color);
@@ -108,8 +154,12 @@ footer {
     align-items: center;
     padding: 15px;
     margin: 0px -10px -10px -10px;
-    background-color: var(--main-site-color);
+    /* background-color: var(--main-site-color); */
+    background: linear-gradient(to bottom, var(--main-site-color) 30%, var(--sub-site-color) 50%);
     color: var(--main-text-color);
+}
+#collaborators {
+    margin-top: 80px;
 }
 #slogan {
     margin: 5px;
@@ -126,48 +176,35 @@ footer {
 #netbeans {
     width: 150px;
 }
+#tau-logo {
+    height: 4rem;
+}
 
-/* installlist.html */
+/* installedsw.html */
 #external-content {
     width: 99.7%;
     height: 1000px;
 }
-.page-content {
-    grid-row: 3;
-    grid-column: 2 / span 2;
-    display: flex;
-    align-content: center;
-    flex-direction: column;
-    min-height: 1000px;
-    margin-bottom: 20px;
-}
+
 
 /* licensing.html, packaging.html */
-.first-panel {
-    grid-row: 3;
-    grid-column: 2 / span 2;
-    display: block;
-    margin-right: var(--default-margin);
-}
-.second-panel {
+.debug-panel {
     border: 1px solid black;
-    grid-row: 4;
-    grid-column: 2 / span 2;
     display: block;
-    margin-bottom: var(--default-margin);
-    margin-right: var(--default-margin);
+    margin: 7px;
     background-color: white;
 }
 .panel-heading {
-    height: 60px;
+    height: 40px;
 }
 .panel-heading2 {
-    padding:20px 0px;
+    padding: 20px;
     color: white;
-    height: 20px;
+    height: 50px;
     background-color: #333;
 }
-.panel-body {
+.panel-body2 {
+    padding: 10px;
     background-color: white;
 }
 .post_msg {

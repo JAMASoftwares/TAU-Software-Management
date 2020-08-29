@@ -8,12 +8,12 @@
     /* Site colors */
     --nav-bar-color: #666666;
     --main-site-color: #551A8B;
-    --sub-site-color: #666666;
+    --sub-site-color: white;
     --main-text-color: whitesmoke;
     --button-text-color: white;
     --header-background-color: #333;
     /* Common element sizes */
-    --navbar-height: 60px;
+    --navbar-height: 100px;
     --default-margin: 20px;
     --form-max-width: 1000px;
     --default-tablecell-width: 300px;

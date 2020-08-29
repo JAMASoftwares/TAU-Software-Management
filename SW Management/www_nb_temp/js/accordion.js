@@ -81,4 +81,18 @@ accordion_btns[3].onclick = function (event) {
     localStorage.setItem("Demo4", visibility);
 };
 
+var menuOpen = true;
+
+function openNav() {
+  var acc_div = document.getElementById("accordion-div");
+  if (menuOpen) {
+      acc_div.style.width = "20px";
+      menuOpen = false;
+  } else {
+      acc_div.style.width = "330px";
+      menuOpen = true;
+  }
+}
+
+
 setAccordionMenu(accordion_divs);

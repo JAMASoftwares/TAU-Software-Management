@@ -11,23 +11,28 @@
     --light-grey: #3b3b3b;
 }
 
+.openbtn {
+    border-right: 1px solid black;
+    font-size: larger;
+    padding: 0px 20px 0px 20px;
+    background-color: var(--main-site-color);
+    color: white;
+    width: 275px;
+    height: 50px;
+    bottom: 0px;  
+}
 
-.menu-accord {
-    /* Location on the page grid */
-/*    border: 2px solid black;*/
-    grid-row: 3 / span 2;
-    grid-column: 1;
-    /* Other styles */
-    padding: 3px;
-    box-sizing: border-box;
-    width: 92%;
-    border-radius: 0.1rem;
-    overflow: hidden;
-    margin: 5px 0px;
+.openbtn:hover {
+    color: #ddd;
+    background-color: var(--main-site-color);
+}
+.openbtn:focus {
+    outline: none;
 }
 
 .menu-accord a {
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .menu-accord ul {

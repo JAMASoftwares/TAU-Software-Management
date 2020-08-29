@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Prosessi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="./css/layout.css">
+    <link rel="stylesheet" type="text/css" href="./css/sitetools.css">
+    <link rel="stylesheet" type="text/css" href="./css/globalproperties.css">
+    <link rel="stylesheet" type="text/css" href="./css/swtable.css">
+    <link rel="stylesheet" type="text/css" href="./css/forms.css">
+    <link rel="stylesheet" type="text/css" href="./css/accordion.css">
+    <link rel="shortcut icon" href="#" />
+
+    <script src="js/data.js"></script>
+    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
+
+  </head>
+  <body class="sp">
+
+    <!-- WMWMWMWMWMWMWMW The same content for all pages WMWMWMWMWMWMWMW -->
+    <div class="gridrow1 sp">
+      <div class="header">
+        <img id="page-logo" src="img/swmanagement-logo.png" alt="page logo">
+      </div>
+      <div id="image-div">
+        <img id="tau-flag" src="img/tau-flag-large.jpg" alt="flag">
+      </div>
+    </div>
+
+    <div class="gridrow2 sp">
+      <div class="accordion-visibility-div sp">
+        <button class="openbtn" onclick="openNav()">☰ Menu</button>
+      </div>
+      
+      <!-- Partly specified content for this page -->
+      <div class="div-page_header sp">
+        <h3 id="page_header" class="sp">Prosessikaaviot</h3>
+        <div class="tools sp">
+          <button id="login-button">
+            <img id="login-logo" src="img/menu-icons/icons8-customer-32.png" alt="user">
+          </button>   
+          <h3 style="color: white">login</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="gridrow3">
+      <div class="menu-accord" id="accordion-div">
+        <ul>
+          <li class="menu-accord-item">
+            <a class="btn sp w3-block">
+              <img class="menu-icons" src="img/menu-icons/icons8-customer-32.png" alt="X">Asiakas
+            </a>
+            <div id="Demo1" class="menu-accord-item__sub w3-hide">
+              <a href="installedsw.html">Asennetut ohjelmistot</a>
+              <a href="https://resourcebooker-tut.scientia.com/#/app/booking-types" target="blank">Resource Booker (ext)</a>
+              <a href="sworder.html">Tilaa ohjelmisto</a>
+              <a href="acceptedsw.html">Hyväksytyt tilaukset</a>
+            </div>
+          </li>
+          <li class="menu-accord-item">
+            <a class="btn sp w3-block">
+              <img class="menu-icons" src="img/menu-icons/icons8-admin-settings-male-32.png" alt="X">Ohjelmistohallinta
+            </a>
+            <div id="Demo2" class="menu-accord-item__sub w3-hide">
+              <a href="requests.html">Ohjelmistotilaukset</a>
+              <a href="licensing.html">Lisensointi</a>
+              <a href="packaging.html">Paketointi</a>
+            </div>
+          </li>
+          <li class="menu-accord-item">
+            <a class="btn sp w3-block">
+              <img class="menu-icons img-size-fix" src="img/menu-icons/icons8-study-64.png" alt="X"><span>TUNI Wiki</span>
+            </a>
+            <div id="Demo3" class="menu-accord-item__sub w3-hide">
+              <a href="https://wiki.tamk.fi/pages/viewpage.action?spaceKey=OHYT&title=Tietokoneluokkien%20ohjelmistotarpeet" target="blank">
+                Luokkien ohjelmistotarpeet (ext)</a>
+              <a href="https://intra.tuni.fi/handbook/2677/2708/7659" target="blank">TUNI vakio-ohjelmistot (intra)</a>
+              <a href="process.html">Prosessikaaviot</a>
+            </div>
+          </li>
+          <li class="menu-accord-item">
+            <a class="btn sp w3-block">
+              <img class="menu-icons img-size-fix" src="img/menu-icons/icons8-transaction-list-64.png" alt="X">Ohjelmistolistat (ext)
+            </a>
+            <div id="Demo4" class="menu-accord-item__sub w3-hide">
+              <a href="https://www.tuni.fi/swlist/StudentLabSoftwareList-Arvo.html">Arvo</a>
+              <a href="https://www.tuni.fi/swlist/StudentLabSoftwareList-Hervanta.html">Hervanta</a>
+              <a href="https://www.tuni.fi/swlist/StudentLabSoftwareList-Keskusta.html">Keskusta</a>
+              <a href="https://www.tuni.fi/swlist/StudentLabSoftwareList-Pori.html">Pori</a>
+              <a href="https://www.tuni.fi/swlist/StudentLabSoftwareList-TAMK.html">TAMK</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- WMWMWMWMWMWMWMW The same content for all pages WMWMWMWMWMWMWMW -->
+
+      <div class="page-content">
+        <div id='process'>
+          <h3 style='display: block;'><b>Ohjelmistotilauksen käsittelykaavio</b></h3>
+          <div class='schema'>
+            <div id="chart_div">
+              <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2020-08-10T15:09:44.432Z\&quot; agent=\&quot;5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36\&quot; etag=\&quot;UDX669SJJ0Gq1iWy4sPE\&quot; version=\&quot;13.6.2\&quot; type=\&quot;google\&quot;&gt;&lt;diagram id=\&quot;r44Elcj799XAZVTu8grt\&quot; name=\&quot;Page-1\&quot;&gt;7Vptj6M2EP41SO2HW4EJJPmYZLet1Kt2pT21vX5zggPeOJgak5f++o7BhNcEckdy1+sl0gaPX2fmecZjs4a92B5+FjgKfuMeYQYyvYNhPxoIWbY5hR8lOWYSdzLJBL6gnm5UCF7pP0QLTS1NqEfiSkPJOZM0qgpXPAzJSlZkWAi+rzZbc1adNcI+aQheV5g1pX9QTwaZdILGhfwXQv0gn9lytcJbnDfWmsQB9vi+JLKfDHshOJfZ0/awIEwZL7dL1u+nM7WnhQkSyj4dor/enFlAt3z36zb6fb2hke+/06PsMEu0wgZyGYw3X3MYFrm+es5lcYRDpYk8avO4fyc8b/wuTp03gwaWGx2KyvooSS74QBneYYETMA1jNJQ4bwJaJPVuIMvmr4qXoi7JVt5jlaPqKgFDjItKDwPZ6/RzXhtaaEMk3/CQsIRvNpSEqV1Bu01MZEkJ2qJYm7GbijUaooqaSPAk9IhytwXV+4BK8hrhlardAztBFsgt09VrytjipLC9dtRX+VgKviGlGjf9QI0vsAdqyVLdMv2e1rIjQpLDWXxaJ9RDuCB8S6Q4QpO8g6uJoiMFmjhZeV/wDpm6TVDinKNlWFPdPw1dsAEeNCGuIMe4hRw1kxMPooUuciED7vMQs6dCOi+cYkKpaPOe80i74o1IedShDyeSVx2VzakmumxYWBdPxIpcUEivX2LhE3mhndvuKEEYlnRXXcfgVkdXhaRGmOjN/tYY9eFoLGxj7uKYbHFLVOpN1Ma6esfO0aXY2QgeWt2rQtdz8EbYlsaSBzjc0DDEagjlNWS+4Q0EsA6Nz0SxfuH5245iI9upRDFrYjajmHXPKGZfxafPo88spngDGlxLmIHJ8RwRCUkFAXCzjM+xzH6/egS72DSBsy0ItsemuVhom5Qxn7F8EPTaVhW9LeC1xvcE7/Rb24Ldnlvw5EtuwW5HyPhUor6nMQnjmHZurDUXw/kgUo+R4CsSx92kWuLVxk/d/pxImIpoeZWZ9c1juh6ruhbqufbU9gbaIFz0UCUZmrawzHGaLBvdimVW2zHwP02zSU+aWWa7s+7Ds8mNePYCSZzkwDD6nWHptpZfynQxLE/ehmeYeSNXF7l82J29/6+cPhr1DKu3c/p1R9neSbDTenI9XaZFmO2qKOiX1p47W3YvCLUt6Ic9WUKjXfLjJ5wmb5x0DwA4a9x90LtvrmyNeuzioTdTt+JQWjEMqdgqJSYWsiku2YscqPxTbewPji59LNU8HvSenxaOeSEEpUqdVPFjua7olpbyfh6Gk5tnDJ4S5Gzszgna/V7yq3PBrb0zBz3Di9qnS3GsdgKz7RpcMj11r/J1f30gt5ZlTmoDZXZoDJRC76T2Z6DRuR0aC2TZZWRZD+aoA1xp6YUICuoRUYJtNty4DG/zIryz3Sx/J4S+EFbtrwqr1lBYde+M1bYDbx+slkDZxMMZWPWOmuiqsDkg+uye4EPfwTcE+JqvmYqkHuYGC6nEHv6kLxbBZnC2a8ATEhlZBSRm1A8VWsH/KtTNVbpDV5jNdMWWel52cCeQy+FlOpSCUqRUTZV35obzqMaCs3qW77Vm+APeQI5Q9S2g1ZbFt6VV6Pq0CorF6/fMncU/MdhP/wI=&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+            </div>
+          </div>
+          <div class='text-content'>
+            <h3>Prosessin vaiheiden karkea mallinnus</h3>
+            <p>
+              Asiakas tekee ennen ohjelmistotilausta erikseen eräänlaisen tilavarauspyynnön. 
+              Luokkatiloja ei pääse valitsemaan suoraan, vaan luokkatilat jaetaan opetuskäyttöön
+              vastaanotettujen tilavarauspyyntöjen perusteella. Tilavarauspalveluissa asetetaan 
+              omat kriteerit sille, millä perusteilla tilat jaetaan opettajille.
+            <p>
+              Tilavarauksesta toimitetaan asiakkaalle tieto tämän käyttöön varatusta opetustilasta.
+              Sen jälkeen asiakkaan tulee tehdä vielä ohjelmistotilaus tietohallinnolle, mikäli
+              luokkien vakio-ohjelmisto ei ole riittävä.
+            </p>
+            <p>
+              Tässä mallinnuksessa päähuomio on kuitenkin ohjelmistotarpeiden keräämisessä ja sen
+              vaiheissa. Jatkokehityksessä sivustolle voidaan kuitenkin liittää myös tilavaraukseen
+              liittyviä palveluita ja asiakkaalle/tilavaraukselle suositella tietokoneluokkia sen
+              perusteella, missä kyseinen ohjelmisto on jo asennettu. Eräs kätevä lisäpalvelu voisi
+              olla sellainen, jossa ohjelman nimen perusteella voi hakea luokkia, joissa kyseinen
+              ohjelma on jo asennettuna.
+            </p>
+            <p>
+              Palvelun kehittämisessä on tärkeää ymmärtää myös asiakkaan lähtökohdat ja siksi
+              on otettava kantaa myös ohjelmistotarpeeseen läheisesti linkittyvään opetustustilan
+              varausmenetelmään. Vaikka asian ratkaisu jäisi vielä tulevaisuuteen, on nykyisen
+              palvelun rakenne suunniteltava siten, ettei myöhemmin sen liittämisestä sivustolle 
+              koidu rakenteellisia ongelmia.
+            </p>
+          </div>
+          <!--
+          <div class='img-container'>
+            <img src='img/silta.jpg' alt='Voi räkä' id='silta'>
+          </div>
+          -->
+          <h3>Nykyinen ja suunniteltu ohjelmistotilausten käsittelyä kuvaava prosessi</h3>
+          <div class="schema2">
+            <div id="chart_div2">
+              <div class="mxgraph" style="max-width:60vw;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2020-08-14T07:53:03.141Z\&quot; agent=\&quot;5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36\&quot; etag=\&quot;s7vaxTKRk36DZSSjRO_K\&quot; version=\&quot;13.6.2\&quot; type=\&quot;google\&quot;&gt;&lt;diagram id=\&quot;-SCrEpDLvMyu197BvTeq\&quot; name=\&quot;Page-1\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+            </div>
+            <p>(Keskeneräinen)</p>
+            <ul>
+              <li><p>Vahvat katkoviivat kuvaavat suunniteltua muutosta prosessissa</p></li>
+              <li><p>Ohut katkoviiva kuvaa oletettua olemassaolevaa tai suunniteltua prosessia, josta ei ole varmuutta</p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer id="lic" class="sp">
+      <p id="slogan">Created by Passion -Developed by NetBeans-</p>
+      <div id="collaborators">
+        <img id="netbeans" src="img/netbeans-logo1.png" alt="netbeans logo">
+        <img id="tau-logo" src="img/tau_logo.png" alt="tau-logo">
+      </div>
+      <p id="developers">Jarno Matarmaa</p>
+    </footer>
+
+    <script type="text/javascript" src="https://app.diagrams.net/js/viewer-static.min.js"></script>
+    <script src="js/accordion.js"></script>
+
+  </body>
+</html>
